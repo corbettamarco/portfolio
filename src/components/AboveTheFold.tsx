@@ -4,8 +4,10 @@ import { CustomTypeWriter } from "./CustomTypeWriter";
 export const AboveTheFold = () => {
   return (
     <>
-      <Flex justify={"space-between"} h="90vh" id="home" backgroundRepeat={"no-repeat"} maxW="100%">
+      <Flex overflowX={"clip"} maxW="100%" justify={"space-between"} h="90vh" id="home" backgroundRepeat={"no-repeat"} bgSize={"cover"}  >
+        <Image opacity={"0.5"} w="1500px"  h="100vh" objectFit={"cover"} src="bgImage1.jpeg" position={"absolute"} zIndex={0}/>
         <Box
+        zIndex={1}
           maxW="fit-content"
           h="fit-content"
           ml={["7vw"]}

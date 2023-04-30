@@ -33,6 +33,7 @@ export const ProjectCard = ({ project }: PropsType) => {
         <Link
           _hover={{ textDecoration: "none" }}
           href={project.link}
+          target="_blank"
           w={"full"}
         >
           <CardBody overflow={"clip"} p="0">
@@ -60,13 +61,13 @@ export const ProjectCard = ({ project }: PropsType) => {
               </Text>
               <Box overflow={"hidden"}>
                 <Box
-                  h={hover ? "auto" : "0"}
+                  h={"0"}
                   className={!hover ? "slide-out-top" : "slide-in-top"}
                 >
                   {project.technologies.map(
                     (technology: any, index: number) => {
                       return (
-                        <Tag key={index} mx=".15rem" mb=".3rem">
+                        <Tag p=".2rem" key={index} mx=".15rem" mb=".3rem">
                           {technology}
                         </Tag>
                       );
