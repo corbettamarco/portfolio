@@ -8,10 +8,10 @@ export const Experience = () => {
         }
         position={"absolute"}
         zIndex={"5"}
-        top="52%"
+        top="32%"
         right={"15%"}
         boxSize={"14rem"}
-        float={"right"}
+       
         rounded={"lg"}
         p=".5rem"
       >

@@ -7,4 +7,38 @@ export const projectsList = [
         image:"twiBooter.png",
         isActive:true,
     },
+    {
+        title: "Tod's NPS",
+        technologies: ["AWS Amplify", "React + TS", "Chakra UI", "React Hook Form"],
+        description: "Multistep NPS (NET PROMOTER SCORE) form created for TOD's Group during a project work ",
+        link:"https://main.d1x2kwrednx0xx.amplifyapp.com/",
+        image:"TodsNPS.png",
+        isActive:true,
+    },
+    {
+        title: "Javascript Conference ",
+        technologies: ["AWS Amplify", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
+        description: "Two pages demo website showcasing events and speakers of the JSWorld Conference",
+        link:"https://main.dk1ex0skfrj0p.amplifyapp.com/",
+        image:"conference.png",
+        isActive:true,
+    },
+    {
+        title: "Meal Vouchers Admin Dashboard",
+        technologies: ["React + TS", "Chakra UI", "React Router", "React Query"],
+        description: "Admin Dashboard for managing meal vouchers and monitoring affiliated businesses",
+        link:"",
+        image:"foodStamps.png",
+        isActive:false,
+    },
+    {
+        title: "Courses Admin Dashboard",
+        technologies: ["React + TS", "Chakra UI", "React Router", "React Query"],
+        description: "Admin Dashboard for managing courses and participants",
+        link:"",
+        image:"courses.png",
+        isActive:false,
+    },
 ]
+
+

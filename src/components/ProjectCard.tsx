@@ -35,6 +35,8 @@ export const ProjectCard = ({ project }: PropsType) => {
           href={project.link}
           target="_blank"
           w={"full"}
+          pointerEvents={!project.isActive ? "none" : "auto"}
+          cursor={!project.isActive? "default" : "pointer"}
         >
           <CardBody overflow={"clip"} p="0">
             <Image
