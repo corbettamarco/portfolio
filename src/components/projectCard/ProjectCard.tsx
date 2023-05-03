@@ -10,25 +10,48 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import "./../styles/projectCard.css";
+import "./projectCard.css";
+import { Tilt } from "react-tilt";
 type PropsType = {
   project: any;
 };
+
+const defaultOptions = {
+	reverse:        true,  // reverse the tilt direction
+	max:            35,     // max tilt rotation (degrees)
+	perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
+	scale:          1,    // 2 = 200%, 1.5 = 150%, etc..
+	speed:          5000,   // Speed of the enter/exit transition
+	transition:     true,   // Set a transition on enter/exit.
+	axis:           null,   // What axis should be disabled. Can be X or Y.
+	reset:          true,    // If the tilt effect has to be reset on exit.
+	easing:         "cubic-bezier(0.25, 0.1, 0.25, 1.0)",    // Easing on enter/exit.
+}
+
 export const ProjectCard = ({ project }: PropsType) => {
   const [hover, setHover] = useState(false);
   return (
-    <>
+    <Tilt
+    style={{
+      transformStyle: 'preserve-3d',
+    }} 
+    options={defaultOptions}
+  >
       <Card
+      overflow={"hidden"}
+      borderColor={project.isActive? "green" : "red"}
+      borderWidth={"1px"}
         mx="1rem"
         _hover={{
           textDecoration: "none",
         }}
-        h="fit-content"
+        h="300px"
         w="22rem"
         rounded={"md"}
         flexDirection={"row"}
         onMouseEnter={(e: React.MouseEvent) => setHover(true)}
         onMouseLeave={(e: React.MouseEvent) => setHover(false)}
+        className="linkLogo" 
       >
         <Link
           _hover={{ textDecoration: "none" }}
@@ -40,16 +63,19 @@ export const ProjectCard = ({ project }: PropsType) => {
         >
           <CardBody overflow={"clip"} p="0">
             <Image
-              transform={hover ? "scale(1.10)" : ""}
+              // transform={hover ? "scale(1.10)" : ""}
               transition={hover ? "0.3s" : "0.3s"}
               roundedTop={"md"}
               src={project.image}
+              borderTopRadius={"md"}
+              background={"linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%)"}
+
             />
           </CardBody>
 
           <CardFooter
             roundedBottom={"md"}
-            h="8rem"
+            h="8.5rem"
             py=".5rem"
             bgColor={"#201F23"}
           >
@@ -61,7 +87,7 @@ export const ProjectCard = ({ project }: PropsType) => {
               >
                 {project.title}
               </Text>
-              <Box overflow={"hidden"}>
+              <Box overflow={"hidden"} pb=".5rem" h="fit-content">
                 <Box
                   h={"0"}
                   className={!hover ? "slide-out-top" : "slide-in-top"}
@@ -88,6 +114,6 @@ export const ProjectCard = ({ project }: PropsType) => {
           </CardFooter>
         </Link>
       </Card>
-    </>
+    </Tilt>
   );
 };

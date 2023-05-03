@@ -1,6 +1,6 @@
-import { Box, Heading, Wrap } from "@chakra-ui/react";
+import { Box, HStack, Heading, Tag, Wrap } from "@chakra-ui/react";
 import { projectsList } from "../projectsList";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "./projectCard/ProjectCard";
 
 export const Projects = () => {
   return (
@@ -10,6 +10,8 @@ export const Projects = () => {
       bgColor={"#1A191D"}
       h="fit-content"
       id="projects"
+      boxShadow="0 30px 40px 40px rgba(0,0,0,.1)"
+
     >
       <Box>
         <Heading
@@ -19,7 +21,11 @@ export const Projects = () => {
         >
           Projects
         </Heading>
-        <Wrap justify={"center"} spacing={"2rem"} my="2rem" mx="2rem">
+        <HStack px="4vw" mt="1rem">
+          <Tag colorScheme={"green"}> Demo Available</Tag>
+          <Tag colorScheme={"red"}> Demo Not Available</Tag>
+        </HStack>
+        <Wrap justify={"center"} spacing={"2rem"} my="2rem" mx="2rem" p="1rem">
           {projectsList.map((project: any, index: number) => {
             return <ProjectCard key={index} project={project} />;
           })}

@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Hide, Image, Text } from "@chakra-ui/react";
-import { LogosBar } from "./logos/LogosBar";
-import { CustomTypeWriter } from "./CustomTypeWriter";
+import { LogosBar } from "../logos/LogosBar";
+import { CustomTypeWriter } from "../CustomTypeWriter";
+import { Loader } from "../loader/Loader";
 export const AboveTheFold = () => {
   return (
     <>
@@ -44,6 +45,7 @@ export const AboveTheFold = () => {
             color={"portfolio.200"}
           >
             <CustomTypeWriter />
+            <Loader />
           </Text>
           <LogosBar justify={""} />
         </Box>

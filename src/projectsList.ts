@@ -17,9 +17,9 @@ export const projectsList = [
     },
     {
         title: "Javascript Conference ",
-        technologies: ["AWS Amplify", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
+        technologies: ["Heroku", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
         description: "Two pages demo website showcasing events and speakers of the JSWorld Conference",
-        link:"https://main.dk1ex0skfrj0p.amplifyapp.com/",
+        link:"https://js-conference.herokuapp.com/",
         image:"conference.png",
         isActive:true,
     },
@@ -33,7 +33,7 @@ export const projectsList = [
     },
     {
         title: "Courses Admin Dashboard",
-        technologies: ["React + TS", "Chakra UI", "React Router", "React Query"],
+        technologies: ["React + TS", "Chakra UI", "React Router", "React Query", "MSAL Auth Library"],
         description: "Admin Dashboard for managing courses and participants",
         link:"",
         image:"courses.png",
