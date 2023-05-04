@@ -24,8 +24,8 @@ export const CustomSidebar = () => {
           <SidebarContent />
         </SidebarSection>
         <Spacer />
-        <SidebarSection bgColor={"black"} w="15rem" py="1rem">
-          <LogosBar justify={"space-evenly"}/>
+        <SidebarSection  w="15rem" py="1rem">
+          <LogosBar />
         </SidebarSection>
       </Sidebar>
     </Hide>

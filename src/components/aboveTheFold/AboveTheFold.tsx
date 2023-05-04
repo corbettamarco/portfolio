@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Hide, Image, Text } from "@chakra-ui/react";
-import { LogosBar } from "../logos/LogosBar";
 import { CustomTypeWriter } from "../CustomTypeWriter";
 import { Loader } from "../loader/Loader";
+import { LogosBar } from "../logos/LogosBar";
 export const AboveTheFold = () => {
   return (
     <>
@@ -9,16 +9,17 @@ export const AboveTheFold = () => {
         overflowX={"clip"}
         maxW="100%"
         justify={"space-between"}
-        h="90vh"
+        h="95vh"
         id="home"
         backgroundRepeat={"no-repeat"}
         bgSize={"cover"}
+        justifyContent={["center", "center", "center", "left", "left"]}
       >
         <Image
           opacity={"0.5"}
           w="1500px"
           minW="full"
-          h="100vh"
+          h="95vh"
           objectFit={"cover"}
           src="bgImage1.jpeg"
           position={"absolute"}
@@ -29,8 +30,11 @@ export const AboveTheFold = () => {
           maxW="fit-content"
           h="fit-content"
           ml={["7vw"]}
-          pt="7rem"
+          mt="7rem"
+          p="2rem"
           textAlign="left"
+          borderRadius={"md"}
+          bgColor={"blackAlpha.500"}
         >
           <Heading
             maxW={"fit-content"}
@@ -45,9 +49,11 @@ export const AboveTheFold = () => {
             color={"portfolio.200"}
           >
             <CustomTypeWriter />
-            <Loader />
+            <Hide below="lg">
+              <Loader />
+            </Hide>
           </Text>
-          <LogosBar justify={""} />
+          <LogosBar />
         </Box>
         <Hide below="lg">
           <Image
@@ -57,9 +63,9 @@ export const AboveTheFold = () => {
             w="600px"
             h="574px"
             minH={"574px"}
-            ml="-7rem"
-            mr="2rem"
-            mt="6rem"
+            right={"2rem"}
+            position={"fixed"}
+            bottom={"0"}
           />
         </Hide>
       </Flex>

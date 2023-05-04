@@ -2,7 +2,7 @@ import "./loaderStyles.css"
 
 export const Loader = () => {
   return (
-    <div className="wrapper" style={{width:"20vw",top:"20rem",left:"20vw", position:"absolute", justifyContent:"center", marginLeft:"20%", zIndex:-2, rotate:"90deg", opacity:.6}}>
+    <div className="wrapper" style={{width:"20vw",top:"50vh",left:"20vw", position:"absolute", justifyContent:"center", marginLeft:"20%", zIndex:-2, rotate:"90deg", opacity:.6}}>
 		<div className="line line1">
 			<span className="circle circle-top"></span>
 			<div className="dotted">

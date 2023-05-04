@@ -8,7 +8,7 @@ export const GmailLogo = () => {
         w="3rem"
         h="3rem"
         justifyContent={"center"}
-        _hover={{ textDecoration: "none", color: "red.200" }}
+        _hover={{ textDecoration: "none", color: "red.300"}}
         borderColor={"red.500"}
         borderRadius={"md"}
         borderWidth={"2px"}
