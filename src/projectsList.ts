@@ -2,8 +2,8 @@ export const projectsList = [
     {
         title: "TwiBooter",
         technologies: ["AWS Amplify", "Lambda Functions","API Gateway", "Python", "React + TS", "Chakra UI"],
-        description: "App for scaping data from Twitch and creating shorts ready to be uploaded on youtube or TikTok",
-        link:"https://master.d1afh24azjts0l.amplifyapp.com/",
+        description: "App for scaping data from Twitch and creating shorts ready to be uploaded on Youtube or TikTok",
+        link:"https://master.d2e8ee307d6s2i.amplifyapp.com/",
         image:"twiBooter.png",
         isActive:true,
     },
@@ -18,7 +18,7 @@ export const projectsList = [
     {
         title: "Javascript Conference ",
         technologies: ["Heroku", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
-        description: "Two pages demo website showcasing events and speakers of the JSWorld Conference",
+        description: "Two pages demo website showcasing events and speakers of the JSWorld Conference, with a Json-Server mock DB hosted on heroku",
         link:"https://main.dbk010o56m7gi.amplifyapp.com/",
         image:"conference.png",
         isActive:true,

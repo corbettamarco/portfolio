@@ -1,6 +1,5 @@
 import { Box, Flex, Heading, Hide, Image, Text } from "@chakra-ui/react";
 import { CustomTypeWriter } from "../CustomTypeWriter";
-import { Loader } from "../loader/Loader";
 import { LogosBar } from "../logos/LogosBar";
 export const AboveTheFold = () => {
   return (
@@ -50,7 +49,7 @@ export const AboveTheFold = () => {
           >
             <CustomTypeWriter />
             <Hide below="lg">
-              <Loader />
+              {/* <Loader /> */}
             </Hide>
           </Text>
           <LogosBar />
