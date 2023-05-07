@@ -19,7 +19,7 @@ export const projectsList = [
         title: "Javascript Conference ",
         technologies: ["Heroku", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
         description: "Two pages demo website showcasing events and speakers of the JSWorld Conference",
-        link:"https://javascript-conference.herokuapp.com/",
+        link:"https://main.dbk010o56m7gi.amplifyapp.com/",
         image:"conference.png",
         isActive:true,
     },
