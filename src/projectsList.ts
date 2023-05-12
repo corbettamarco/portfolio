@@ -16,11 +16,19 @@ export const projectsList = [
         isActive:true,
     },
     {
-        title: "Javascript Conference ",
+        title: "Javascript Conference",
         technologies: ["Heroku", "React + TS", "Chakra UI", "React Router", "JSON Server", "React Query"],
         description: "Two pages demo website showcasing events and speakers of the JSWorld Conference, with a Json-Server mock DB hosted on heroku",
         link:"https://main.dbk010o56m7gi.amplifyapp.com/",
         image:"conference.png",
+        isActive:true,
+    },
+    {
+        title: "Movie App",
+        technologies: ["Amplify", "React + TS", "Chakra UI"],
+        description: "App using IMDb APIs to show a list of films/games/series and relative detail created to learn React.JS fundamentals",
+        link:"https://master.d11pszxdmwl7sz.amplifyapp.com/",
+        image:"movieApp.png",
         isActive:true,
     },
     {

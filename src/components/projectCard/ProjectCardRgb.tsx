@@ -76,7 +76,7 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
                       {project.technologies.map(
                         (technology: any, index: number) => {
                           return (
-                            <Tag p=".2rem" key={index} mx=".15rem" mb=".3rem">
+                            <Tag p=".3rem" key={index} mx=".15rem" mb=".3rem" mt=".1rem">
                               {technology}
                             </Tag>
                           );
