@@ -1,26 +1,24 @@
 import { Link, Tooltip } from "@chakra-ui/react";
 import "../../styles/logoStyles.css";
+import { FaGithub } from "react-icons/fa";
 
 export const GitHubLogo = () => {
   return (
     <Tooltip label="https://github.com/corbettamarco/corbettamarco">
       <Link
-        w="3rem"
         h="3rem"
+        p=".5rem"
         justifyContent={"center"}
         _hover={{ textDecoration: "none", color: "white", borderColor:"white" }}
         borderColor={"black"}
         borderRadius={"md"}
         borderWidth={"2px"}
-        className="fa fa-github linkLogo"
-        fontSize={"2.5rem"}
+        fontSize={"2rem"}
+        className="linkLogo"
         href="https://github.com/corbettamarco/corbettamarco"
         target="_blank"
-        pl=".3rem"
-        pt=".25rem"
-        mt="1rem"
         color={"black"}
-      />
+      ><FaGithub/></Link>
     </Tooltip>
   );
 };

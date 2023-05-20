@@ -24,6 +24,7 @@ export const theme = extendTheme({
       "html, body": {
         bg: "-webkit-radial-gradient(rgba(0,64,170,1) 0%, rgba(5,114,147,0.8803418803418803) 0%, rgba(26,32,44,1) 100%)",
         scrollBehavior: "smooth",
+        textColor: "white"
       },
     },
   },
