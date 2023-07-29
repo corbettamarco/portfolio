@@ -12,6 +12,7 @@ import "./projectCard.css";
 import "./projectCardRgb.css";
 
 type PropsType = {
+  key: number;
   project: any;
 };
 

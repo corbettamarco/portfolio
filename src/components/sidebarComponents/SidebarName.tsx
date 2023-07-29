@@ -7,7 +7,7 @@ export const SidebarName = () => {
           fontWeight={"bold"}
           fontSize={["1.3rem","1.8rem","2rem","2rem","2rem","2rem",]}
           p="1rem"
-          pl="2rem"
+          pl="2.5rem"
           mt={[".4rem","0","0","0","0","0"]}
           display={"block"}
           textColor={"portfolio.500"}

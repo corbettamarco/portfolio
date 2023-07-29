@@ -41,7 +41,7 @@ export const AboveTheFold = () => {
           >
             <Text color={"portfolio.500"}>Marco </Text> Corbetta
           </Heading>
-          <Text
+          <Box
             mx=".2rem"
             my=".5rem"
             fontSize={["1rem", "1.5rem", "1.8rem", "2rem", "2rem"]}
@@ -51,20 +51,21 @@ export const AboveTheFold = () => {
             <Hide below="lg">
               {/* <Loader /> */}
             </Hide>
-          </Text>
+          </Box>
           <LogosBar />
         </Box>
         <Hide below="lg">
           <Image
             src="http://follio-react.wpocean.com/static/media/hero-shape.84c5ca49.png"
             zIndex="1"
-            minW={"510px"}
+            minW={"550px"}
             w="600px"
             h="574px"
             minH={"574px"}
-            right={"2rem"}
-            position={"fixed"}
-            bottom={"0"}
+            right={'5%'}
+            float={'right'}
+            position={"absolute"}
+            top={"43vh"}
           />
         </Hide>
       </Flex>

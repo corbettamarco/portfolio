@@ -20,7 +20,7 @@ export const CustomSidebar = () => {
       >
         <SidebarOverlay />
         <SidebarSection mt={"2rem"}>
-          <SidebarToggleButton mt={".5rem"} />
+          <SidebarToggleButton mt={".5rem"} _hover={{backgroundColor:"rgb(24, 225, 227,0.4)", backdropFilter:"blur(10px)"}}/>
           <SidebarContent />
         </SidebarSection>
         <Spacer />

@@ -7,7 +7,7 @@ export const LinkedinLogo = () => {
       <Link
         h="3rem"
         p=".5rem"
-        _hover={{ textDecoration: "none", color: "linkedin.100",  borderColor:"linkedin.100" }}
+        _hover={{ textDecoration: "none", color: "linkedin.100",  borderColor:"linkedin.500" }}
         color={"linkedin.500"}
         borderColor={"linkedin.500"}
         borderRadius={"md"}
