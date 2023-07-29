@@ -1,5 +1,5 @@
 import { Box, HStack, Hide, Text } from "@chakra-ui/react";
-export const Experience = () => {
+export const YearsOfExperience = () => {
   return (
     <Hide below="md">
       <Box

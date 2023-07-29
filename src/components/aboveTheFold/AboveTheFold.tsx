@@ -1,6 +1,15 @@
-import { Box, Flex, Heading, Hide, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Hide,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { CustomTypeWriter } from "../CustomTypeWriter";
 import { LogosBar } from "../logos/LogosBar";
+import GetInTouchButton from "./GetInTouchButton";
 export const AboveTheFold = () => {
   return (
     <>
@@ -24,36 +33,37 @@ export const AboveTheFold = () => {
           position={"absolute"}
           zIndex={0}
         />
-        <Box
-          zIndex={1}
-          maxW="fit-content"
-          h="fit-content"
-          ml={["7vw"]}
-          mt="7rem"
-          p="2rem"
-          textAlign="left"
-          borderRadius={"md"}
-          bgColor={"blackAlpha.500"}
-        >
-          <Heading
-            maxW={"fit-content"}
-            fontSize={["2rem", "4rem", "5rem", "6rem", "6rem"]}
-          >
-            <Text color={"portfolio.500"}>Marco </Text> Corbetta
-          </Heading>
+        <VStack >
           <Box
-            mx=".2rem"
-            my=".5rem"
-            fontSize={["1rem", "1.5rem", "1.8rem", "2rem", "2rem"]}
-            color={"portfolio.200"}
+            zIndex={1}
+            maxW="fit-content"
+            h="fit-content"
+            ml={["7vw"]}
+            mt="7rem"
+            p="2rem"
+            textAlign="left"
+            borderRadius={"md"}
+            bgColor={"blackAlpha.500"}
           >
-            <CustomTypeWriter />
-            <Hide below="lg">
-              {/* <Loader /> */}
-            </Hide>
+            <Heading
+              maxW={"fit-content"}
+              fontSize={["2rem", "4rem", "5rem", "6rem", "6rem"]}
+            >
+              <Text color={"portfolio.500"}>Marco </Text> Corbetta
+            </Heading>
+            <Box
+              mx=".2rem"
+              my=".5rem"
+              fontSize={["1rem", "1.5rem", "1.8rem", "2rem", "2rem"]}
+              color={"portfolio.200"}
+            >
+              <CustomTypeWriter />
+              <Hide below="lg">{/* <Loader /> */}</Hide>
+            </Box>
+            <LogosBar />
           </Box>
-          <LogosBar />
-        </Box>
+          <GetInTouchButton />
+        </VStack>
         <Hide below="lg">
           <Image
             src="http://follio-react.wpocean.com/static/media/hero-shape.84c5ca49.png"
@@ -62,8 +72,8 @@ export const AboveTheFold = () => {
             w="600px"
             h="574px"
             minH={"574px"}
-            right={'5%'}
-            float={'right'}
+            right={"5%"}
+            float={"right"}
             position={"absolute"}
             top={"43vh"}
           />
