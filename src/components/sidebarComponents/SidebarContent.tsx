@@ -3,33 +3,40 @@ import { Code, Link } from "@chakra-ui/react";
 import { useState } from "react";
 
 export const SidebarContent = () => {
-  const [selected, setSelected] = useState<number>(0);
+  const [selected, setSelected] = useState<number | undefined>(0);
+  const sections=[{
+    href:"#home",
+    text:"// home"
+  },
+  {
+    href:"#projects",
+    text:"// projects"
+  },
+  {
+    href:"#experience",
+    text:"// experience"
+  }
+]
 
   return (
     <>
+    {sections.map((section, index )=>{
+      return(
       <Code
+        key={index}
         style={{ ...codeStyles }}
         as={Link}
-        href="#home"
-        onMouseEnter={() => setSelected(1)}
-        onMouseLeave={() => setSelected(0)}
-        color={selected === 1 ? "portfolio.500" : "white"}
-        opacity={selected !==0 && selected !==1 ? "0.5" : "1" }
-
+        href={section.href}
+        onMouseEnter={() => setSelected(index)}
+        onMouseLeave={() => setSelected(undefined)}
+        color={selected === index ? "portfolio.500" : "white"}
+        opacity={(selected || selected===0) && selected !==index ? "0.5" : "1" }
+       
       >
-        // home
-      </Code>
-      <Code
-        style={{ ...codeStyles }}
-        as={Link}
-        href="#projects"
-        onMouseEnter={() => setSelected(2)}
-        onMouseLeave={() => setSelected(0)}
-        color={selected === 2 ? "portfolio.500" : "white"}
-        opacity={selected !==0 && selected !==2 ? "0.5" : "1" }
-      >
-        //projects
-      </Code>
+        
+        {section.text}
+      </Code>)
+    })}
     </>
   );
 };

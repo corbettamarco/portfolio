@@ -1,31 +1,32 @@
 import { TimeIcon } from "@chakra-ui/icons";
 import {
-  ListItem,
-  Stack,
-  HStack,
-  VStack,
-  Heading,
-  Text,
-  Image,
-  TabPanel,
-  Spacer,
   Box,
+  HStack,
+  Heading,
+  Image,
+  SimpleGrid,
+  Spacer,
+  TabPanel,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import { JobType } from "../../Types/JobType";
+import { IconType } from "react-icons/lib";
+import { JsxElement } from "typescript";
+import { ReactElement, ReactNode } from "react";
 
 export const SingleJob = ({ job }: { job: JobType }) => {
   return (
-    <TabPanel mx="1em" my="2em" w={["100vw", "100vw", "80vw"]} minW={"full"}>
-      <Stack
-        direction={["column", "column", "column", "row", "row"]}
+    <TabPanel my="1em" w="90vw" h="25rem">
+      <SimpleGrid
+        columns={[1, 1, 2, 2, 2]}
         mt="1em"
         textColor={"white"}
-        justifyContent={"space-evenly"}
+        w={"100%"}
+        display={["block", "block", "flex", "flex", "flex"]}
       >
-        <VStack justifyContent={"right"} pr={{ lg: "1em" }}>
+        <VStack w={["100%", "100%", "50%", "50%", "50%"]}>
           <Image
-            mx="1em"
-            
             h={["5em", "7.5em", "7.5em", "10em", "5em"]}
             rounded={"lg"}
             src={job.img}
@@ -35,13 +36,30 @@ export const SingleJob = ({ job }: { job: JobType }) => {
           <Spacer />
           <HStack>
             <TimeIcon />
-            <Text fontWeight={"bold"} fontSize="1.5em" minW="fit-content">
+            <Text fontWeight={"bold"} fontSize="1.2m" minW="fit-content">
               {job.dates}
             </Text>
           </HStack>
           <Spacer />
         </VStack>
-      </Stack>
+        <Box
+          w={["100%", "100%", "50%", "50%", "50%"]}
+          mt={["1rem", "1rem", "2rem", "2rem", "2rem"]}
+        >
+          <VStack>
+            <Text>{job.desc}</Text>
+            <HStack w="100%" justifyContent={"left"} pt='1rem' gap={'1rem'}>
+              {job.icons?.map((icon, index) => {
+                return (
+                  <Box fontSize={'5rem'} w='5rem' key={index}>
+                    {icon}
+                  </Box>
+                );
+              })}
+            </HStack>
+          </VStack>
+        </Box>
+      </SimpleGrid>
     </TabPanel>
   );
 };

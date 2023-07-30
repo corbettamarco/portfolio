@@ -1,5 +1,5 @@
 import { Box, Heading, Wrap, Text, HStack } from "@chakra-ui/react";
-import { projectsList } from "../projectsList";
+import { projectsList } from "./projectsList";
 import { ProjectCardRgb } from "./projectCard/ProjectCardRgb";
 
 export const Projects = () => {

@@ -1,13 +1,11 @@
 import {
   Box,
   ButtonGroup,
-  Container,
-  IconButton,
   Stack,
-  Text,
+  Text
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { GitHubLogo } from "../logos/GitHubLogo";
+import { GmailLogo } from "../logos/GmailLogo";
 import { LinkedinLogo } from "../logos/LinkedinLogo";
 
 export const Footer = () => (
@@ -23,16 +21,16 @@ export const Footer = () => (
     borderTop={"1px solid"}
     borderColor={"portfolio.500"}
   >
-    <Stack spacing={{ base: "4", md: "5" }} >
-      <Stack justify="space-between" direction="row" align="center" >
+    <Stack spacing={{ base: "4", md: "5" }}>
+      <Stack justify="space-between" direction="row" align="center">
         <ButtonGroup spacing={{ base: "1rem", md: "2rem" }}>
-        <LinkedinLogo/>
-          <GitHubLogo/>
+          <LinkedinLogo />
+          <GmailLogo />
+          <GitHubLogo />
         </ButtonGroup>
       </Stack>
       <Text fontSize="sm" color="fg.subtle" fontStyle={"italic"}>
-        &copy; {new Date().getFullYear()} Marco Corbetta, All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Marco Corbetta, All rights reserved.
       </Text>
     </Stack>
   </Box>

@@ -39,7 +39,7 @@ export const AboveTheFold = () => {
             maxW="fit-content"
             h="fit-content"
             ml={["7vw"]}
-            mt="7rem"
+            mt="4rem"
             p="2rem"
             textAlign="left"
             borderRadius={"md"}

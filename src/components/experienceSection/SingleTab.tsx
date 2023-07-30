@@ -1,4 +1,4 @@
-import { Heading, Link, Tab, Text, VStack } from "@chakra-ui/react";
+import { Heading, Tab, VStack } from "@chakra-ui/react";
 import { JobType } from "../../Types/JobType";
 
 type SingleTabProps = {
@@ -21,20 +21,22 @@ export const SingleTab = ({
         borderBottomWidth: "2px",
         borderBottomColor: "portfolio.500",
       }}
-      borderBottom="2px"
-      borderColor={"#404040"}
+      borderBottomWidth="2.4px"
+      alignSelf={'flex-end'}
+      borderColor={"#1A191D"}
       onClick={() => setSelected(index)}
+
     >
       <VStack
         my="0.5em"
         _hover={{
           textShadow:
-            " 0 0 1px #7CDCB9, 1px -1px 2px #7CDCB9, 0 1px 4px #7CDCB9",
+            " 0 0 1px #acfeff, 0 1px 2px #acfeff",
         }}
         spacing={1}
       >
         <Heading
-          w="25vw"
+          w="40vw"
           fontSize={"1.5em"}
           textColor={selected === index ? "portfolio.500" : "white"}
         >
