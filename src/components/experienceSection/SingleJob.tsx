@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { JobType } from "../../Types/JobType";
 import '../../styles/wrapStyles.css';
-import { FaLocationDot } from "react-icons/fa6";
+import { ImLocation } from "react-icons/im";
 
 export const SingleJob = ({ job }: { job: JobType }) => {
   return (
@@ -41,7 +41,7 @@ export const SingleJob = ({ job }: { job: JobType }) => {
             </Text>
           </HStack>
           <HStack>
-            <FaLocationDot size={'1.5rem'}/>
+            <ImLocation size={'1.5rem'}/>
             <Text fontWeight={"bold"} fontSize={['1rem','1rem','1rem','1.3rem','1.3rem']} minW="fit-content">
               {job.location}
             </Text>
