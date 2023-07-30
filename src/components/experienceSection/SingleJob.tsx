@@ -18,7 +18,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export const SingleJob = ({ job }: { job: JobType }) => {
   return (
-    <TabPanel my="1em" w="90vw" minH="30rem">
+    <TabPanel my="1em" w="90vw" minH="30rem"> 
       <SimpleGrid
         columns={[1, 1, 2, 2, 2]}
         mt={[".0","0","0","1em","1em"]}
