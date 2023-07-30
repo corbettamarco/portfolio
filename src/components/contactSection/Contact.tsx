@@ -53,7 +53,7 @@ const schema = z.object({
   phone: z
     .string()
     .regex(
-      /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
+      /^$|^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i,
       "Invalid Number!"
     )
     .optional(),
@@ -98,7 +98,7 @@ export default function Contact() {
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
             spacing={{ base: 8 }}
-            maxW={{ lg: "lg" }}
+            w='40%'
           >
             <Stack spacing={4}>
               <Heading
@@ -121,16 +121,14 @@ export default function Contact() {
             </Stack>
             <Box as={"form"} mt={5} onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing={4}>
-                <FormControl isRequired>
+                <FormControl isRequired isInvalid={errors?.name ? true : false} h='6rem'>
                   <FormLabel color={"gray.500"}>First name</FormLabel>
-
                   <InputGroup>
                     <InputLeftElement
                       color="gray.300"
                       fontSize="1.2em"
                       children={<FaUser />}
                     />
-
                     <Input
                       placeholder="First Name"
                       bg={"gray.100"}
@@ -139,16 +137,18 @@ export default function Contact() {
                       _placeholder={{
                         color: "gray.500",
                       }}
-                      {...register("name", { required: true })}
+                      {...register("name", {
+                        required: "This is required",
+                      })}
                     />
                   </InputGroup>
+                  <FormErrorMessage color={"red"}>
+                    {errors.name && errors.name.message}
+                  </FormErrorMessage>
                 </FormControl>
-                <FormErrorMessage color={"red"}>
-                  {errors.name && errors.name.message}
-                </FormErrorMessage>
-                <FormControl isRequired>
-                  <FormLabel color={"gray.500"}>Email</FormLabel>
 
+                <FormControl isRequired isInvalid={errors?.mail ? true : false}  h='6rem'>
+                  <FormLabel color={"gray.500"}>Email</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       color="gray.300"
@@ -163,14 +163,17 @@ export default function Contact() {
                       _placeholder={{
                         color: "gray.500",
                       }}
-                      {...register("mail", { required: true })}
+                      {...register("mail", {
+                        required: "This is required",
+                      })}
                     />
                   </InputGroup>
                   <FormErrorMessage color={"red"}>
                     {errors.mail && errors.mail.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl>
+
+                <FormControl isInvalid={errors?.phone ? true : false}  h='6rem'>
                   <FormLabel color={"gray.500"}>Phone</FormLabel>
                   <InputGroup>
                     <InputLeftElement
@@ -178,9 +181,8 @@ export default function Contact() {
                       fontSize="1.2em"
                       children={<PhoneIcon />}
                     />
-
                     <Input
-                      placeholder="+39 (___) __-___-___"
+                      placeholder="+39 ________________"
                       bg={"gray.100"}
                       type="number"
                       border={0}
@@ -188,14 +190,12 @@ export default function Contact() {
                       _placeholder={{
                         color: "gray.500",
                       }}
-                      {...register("phone", {
-                        valueAsNumber: true,
-                      })}
+                      {...register("phone")}
                     />
-                    <FormErrorMessage>
-                      {errors.phone && errors.phone.message}
-                    </FormErrorMessage>
                   </InputGroup>
+                  <FormErrorMessage color={"red"}>
+                    {errors.phone && errors.phone.message}
+                  </FormErrorMessage>
                 </FormControl>
 
                 <FormControl>
