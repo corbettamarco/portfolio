@@ -13,7 +13,7 @@ export const jobs: JobType[] = [
       role: "Front End Developer",
       img: "refactormi.png",
       desc:`UI development of applications for client companies.vUsage of GitHub for version control, HTML, CSS, React.JS + TypeScript, Chakra UI library, Storybook and NX monorepository .`,
-      icons: [<FaReact/>, <ChakraUisvg/>, <SiTypescript/>]
+      icons: [<FaReact color="#00DBF7"/>, <ChakraUisvg/>, <SiTypescript color="#2F74C0"/>]
       },
     {
       company: "Tod's SPA",

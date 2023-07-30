@@ -1,6 +1,7 @@
 import { TimeIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Center,
   HStack,
   Heading,
   Image,
@@ -17,7 +18,7 @@ import { ReactElement, ReactNode } from "react";
 
 export const SingleJob = ({ job }: { job: JobType }) => {
   return (
-    <TabPanel my="1em" w="90vw" h="25rem">
+    <TabPanel my="1em" w="90vw" minH="30rem">
       <SimpleGrid
         columns={[1, 1, 2, 2, 2]}
         mt="1em"
@@ -48,15 +49,17 @@ export const SingleJob = ({ job }: { job: JobType }) => {
         >
           <VStack>
             <Text>{job.desc}</Text>
-            <HStack w="100%" justifyContent={"left"} pt='1rem' gap={'1rem'}>
-              {job.icons?.map((icon, index) => {
-                return (
-                  <Box fontSize={'5rem'} w='5rem' key={index}>
-                    {icon}
-                  </Box>
-                );
-              })}
-            </HStack>
+            <Center>
+              <HStack w="100%" justifyContent={"left"} pt="1rem" gap={"1rem"}>
+                {job.icons?.map((icon, index) => {
+                  return (
+                    <Box fontSize={"5rem"} w="5rem" key={index}>
+                      {icon}
+                    </Box>
+                  );
+                })}
+              </HStack>
+            </Center>
           </VStack>
         </Box>
       </SimpleGrid>

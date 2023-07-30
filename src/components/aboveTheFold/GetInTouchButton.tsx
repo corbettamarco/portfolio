@@ -2,15 +2,13 @@
 
 import {
   Box,
-  Heading,
-  Container,
-  Text,
   Button,
-  Stack,
-  Icon,
-  useColorModeValue,
-  createIcon,
   Hide,
+  Icon,
+  Stack,
+  Text,
+  createIcon,
+  useColorModeValue
 } from "@chakra-ui/react";
 
 export default function GetInTouchButton() {
@@ -22,22 +20,29 @@ export default function GetInTouchButton() {
       alignSelf={"center"}
       position={"relative"}
       pt={"2rem"}
-      pl={['2.2rem','2.7rem','4rem','5rem','6rem']}
+      pl={["2.2rem", "2.7rem", "4rem", "5rem", "6rem"]}
     >
-      <Button
-        bg={"portfolio.400"}
-        color={"black"}
-        rounded={"full"}
-        px={6}
-        _hover={{
-          bg: "portfolio.500",
-          color: 'white'
-        }}
+      <a
+        href="CVEnglish.pdf"
+        target="_blank"
+        rel="noreferrer"
+        download="Cv-Marco-Corbetta"
       >
-        Download Resume
-      </Button>
+        <Button
+          bg={"portfolio.400"}
+          color={"black"}
+          rounded={"full"}
+          px={6}
+          _hover={{
+            bg: "portfolio.500",
+            color: "white",
+          }}
+        >
+          Download Resume
+        </Button>
+      </a>
       <Hide below="md">
-        <Box >
+        <Box>
           <Icon
             as={Arrow}
             color={useColorModeValue("gray.800", "gray.300")}
@@ -53,7 +58,7 @@ export default function GetInTouchButton() {
             right={"-110px"}
             top={"25px"}
             transform={"rotate(10deg)"}
-            fontWeight={'bold'}
+            fontWeight={"bold"}
           >
             Click Me!
           </Text>
