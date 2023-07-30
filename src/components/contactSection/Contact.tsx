@@ -16,11 +16,13 @@ import {
   Stack,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { z } from "zod";
+import emailjs from '@emailjs/browser';
 
 /*const Blur = (props: IconProps) => {
   return (
@@ -63,14 +65,39 @@ const schema = z.object({
 type Inputs = z.infer<typeof schema>;
 
 export default function Contact() {
+  const toast = useToast();
+
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<Inputs>({ resolver: zodResolver(schema) });
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
+    emailjs
+      .send(
+        "service_xkjz3fq",
+        "template_qrphqfp",
+         data,
+        "DKZUh7_osPhx1Wf2f"
+      )
+      .then(
+        (result:any) => {
+            toast({
+                title: `Message Sent` + result,
+                status: "success",
+                isClosable: true,
+              })
+        },
+        (error: any) => {
+            toast({
+                title: `Error` + error,
+                status: "error",
+                isClosable: true,
+              })
+        }
+      );
   };
   return (
     <Box
@@ -94,17 +121,18 @@ export default function Contact() {
       <Container minW="100%" py={{ base: 3, sm: 5, lg: 10 }}>
         <Center>
           <Stack
-            bg={"gray.50"}
+            bgColor={"#1A191D"}
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
             spacing={{ base: 8 }}
-            w='40%'
+            w="40%"
           >
             <Stack spacing={4}>
               <Heading
-                color={"gray.800"}
+                bgGradient={"linear(to-l, portfolio.400,pink.400)"}
                 lineHeight={1.1}
                 fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+                bgClip="text"
               >
                 Contact Me
                 <Text
@@ -121,7 +149,11 @@ export default function Contact() {
             </Stack>
             <Box as={"form"} mt={5} onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing={4}>
-                <FormControl isRequired isInvalid={errors?.name ? true : false} h='6rem'>
+                <FormControl
+                  isRequired
+                  isInvalid={errors?.name ? true : false}
+                  h="6rem"
+                >
                   <FormLabel color={"gray.500"}>First name</FormLabel>
                   <InputGroup>
                     <InputLeftElement
@@ -140,6 +172,7 @@ export default function Contact() {
                       {...register("name", {
                         required: "This is required",
                       })}
+                      name="name"
                     />
                   </InputGroup>
                   <FormErrorMessage color={"red"}>
@@ -147,7 +180,11 @@ export default function Contact() {
                   </FormErrorMessage>
                 </FormControl>
 
-                <FormControl isRequired isInvalid={errors?.mail ? true : false}  h='6rem'>
+                <FormControl
+                  isRequired
+                  isInvalid={errors?.mail ? true : false}
+                  h="6rem"
+                >
                   <FormLabel color={"gray.500"}>Email</FormLabel>
                   <InputGroup>
                     <InputLeftElement
@@ -166,6 +203,7 @@ export default function Contact() {
                       {...register("mail", {
                         required: "This is required",
                       })}
+                      name="mail"
                     />
                   </InputGroup>
                   <FormErrorMessage color={"red"}>
@@ -173,7 +211,7 @@ export default function Contact() {
                   </FormErrorMessage>
                 </FormControl>
 
-                <FormControl isInvalid={errors?.phone ? true : false}  h='6rem'>
+                <FormControl isInvalid={errors?.phone ? true : false} h="6rem">
                   <FormLabel color={"gray.500"}>Phone</FormLabel>
                   <InputGroup>
                     <InputLeftElement
@@ -191,6 +229,7 @@ export default function Contact() {
                         color: "gray.500",
                       }}
                       {...register("phone")}
+                      name="phone"
                     />
                   </InputGroup>
                   <FormErrorMessage color={"red"}>
@@ -210,6 +249,7 @@ export default function Contact() {
                         color: "gray.500",
                       }}
                       {...register("message")}
+                      name="message"
                     />
                   </InputGroup>
                 </FormControl>

@@ -7,6 +7,7 @@ export type JobType={
     dates: string,
     role: string,
     img: string,
+    location:string,
     desc: string,
     icons?: ReactElement[],
 }

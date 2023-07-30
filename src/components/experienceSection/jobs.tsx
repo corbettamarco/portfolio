@@ -17,7 +17,8 @@ export const jobs: JobType[] = [
     dates: "06/2022 - 05/2023",
     role: "Front End Developer",
     img: "refactormi.png",
-    desc: `UI development of applications for client companies.vUsage of GitHub for version control, HTML, CSS, React.JS + TypeScript, Chakra UI library, Storybook and NX monorepository.`,
+    location:'Fulll Remote',
+    desc: `UI development of applications for client companies. Usage of GitHub for version control, HTML, CSS, React.JS + TypeScript, Chakra UI library, Storybook and NX monorepository.`,
     icons: [
       <FaReact color="#00DBF7" />,
       <ChakraUisvg />,
@@ -33,7 +34,8 @@ export const jobs: JobType[] = [
     dates: "05/2023 - 07/2023",
     role: "Email Campaign Developer",
     img: "tods.png",
-    desc: "Creation and editing of HTML email templates for global newlsetter campaigns for Tod's, Hogan, Fay and Roger Vivier brands. Usage of Adobe Campaign. Usage of Adobe Dreaweaver. Interational team collaboration.",
+    location:'Milan',
+    desc: "Creation and editing of HTML email templates for global newlsetter campaigns for Tod's, Hogan, Fay and Roger Vivier brands. Usage of Adobe Campaign and Adobe Dreaweaver. Interational team collaboration.",
     icons: [
       <SiHtml5 color="#DD4B24" />,
       <SiCss3 color="#254BDD" />,

@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { JobType } from "../../Types/JobType";
 import '../../styles/wrapStyles.css';
+import { SlLocationPin } from "react-icons/sl";
 
 export const SingleJob = ({ job }: { job: JobType }) => {
   return (
@@ -37,6 +38,12 @@ export const SingleJob = ({ job }: { job: JobType }) => {
             <CalendarIcon />
             <Text fontWeight={"bold"} fontSize={['1rem','1rem','1rem','1.3rem','1.3rem']} minW="fit-content">
               {job.dates}
+            </Text>
+          </HStack>
+          <HStack>
+            <SlLocationPin />
+            <Text fontWeight={"bold"} fontSize={['1rem','1rem','1rem','1.3rem','1.3rem']} minW="fit-content">
+              {job.location}
             </Text>
           </HStack>
           <Spacer />
