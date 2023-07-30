@@ -15,6 +15,10 @@ export const SidebarContent = () => {
   {
     href:"#experience",
     text:"// experience"
+  },
+  {
+    href:"#contacts",
+    text:"// contacts"
   }
 ]
 
@@ -31,7 +35,7 @@ export const SidebarContent = () => {
         onMouseLeave={() => setSelected(undefined)}
         color={selected === index ? "portfolio.500" : "white"}
         opacity={(selected || selected===0) && selected !==index ? "0.5" : "1" }
-       
+        mt={'1rem'}
       >
         
         {section.text}

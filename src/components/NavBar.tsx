@@ -9,7 +9,7 @@ export const NavBar = () => {
   const [visible, setVisible] = useState(true);
 
   const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset;
+    const currentScrollPos = window.scrollY;
 
     setVisible(
       (prevScrollPos > currentScrollPos &&

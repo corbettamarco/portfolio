@@ -14,7 +14,7 @@ export const SidebarName = () => {
           ml={{  base: "2rem", md: "0" }}
           _hover={{ opacity: "0.5", textDecoration: "none" }}
           as={Link}
-          href="/"
+          href="#home"
         >
           MarcoCorbetta._
         </Code>

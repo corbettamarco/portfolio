@@ -22,7 +22,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { z } from "zod";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 /*const Blur = (props: IconProps) => {
   return (
@@ -68,39 +68,45 @@ export default function Contact() {
   const toast = useToast();
 
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<Inputs>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     emailjs
       .send(
-        "service_xkjz3fq",
-        "template_qrphqfp",
-         data,
-        "DKZUh7_osPhx1Wf2f"
+        process.env.REACT_APP_SERVICE_ID
+          ? process.env.REACT_APP_SERVICE_ID
+          : "",
+        process.env.REACT_APP_TEMPLATE_ID
+          ? process.env.REACT_APP_TEMPLATE_ID
+          : "",
+        data,
+        process.env.REACT_APP_PUBLIC_KEY
       )
       .then(
-        (result:any) => {
-            toast({
-                title: `Message Sent` + result,
-                status: "success",
-                isClosable: true,
-              })
+        (result: any) => {
+          toast({
+            title: `Message Sent`,
+            status: "success",
+            isClosable: true,
+          });
+          reset();
         },
         (error: any) => {
-            toast({
-                title: `Error` + error,
-                status: "error",
-                isClosable: true,
-              })
+          toast({
+            title: `Error` + error,
+            status: "error",
+            isClosable: true,
+          });
         }
       );
   };
   return (
     <Box
+      id="contacts"
       position={"relative"}
       bgGradient="linear(to-l, pink.600, #1A191D, portfolio.800)"
     >
@@ -125,7 +131,8 @@ export default function Contact() {
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
             spacing={{ base: 8 }}
-            w="40%"
+            w="70vw"
+            maxW={'40rem'}
           >
             <Stack spacing={4}>
               <Heading
@@ -147,7 +154,8 @@ export default function Contact() {
                 Leave your contact here and I will answer ASAP
               </Text>
             </Stack>
-            <Box as={"form"} mt={5} onSubmit={handleSubmit(onSubmit)}>
+            <Center>
+            <Box as={"form"} mt={5} onSubmit={handleSubmit(onSubmit)} w='50vw' maxW={'30rem'}>
               <Stack spacing={4}>
                 <FormControl
                   isRequired
@@ -270,6 +278,7 @@ export default function Contact() {
                 Submit
               </Button>
             </Box>
+            </Center>
           </Stack>
         </Center>
       </Container>
