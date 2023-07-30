@@ -155,7 +155,7 @@ export default function Contact() {
               </Text>
             </Stack>
             <Center>
-            <Box as={"form"} mt={5} onSubmit={handleSubmit(onSubmit)} w='50vw' maxW={'30rem'}>
+            <Box as={"form"} onSubmit={handleSubmit(onSubmit)} w='50vw' maxW={'30rem'}>
               <Stack spacing={4}>
                 <FormControl
                   isRequired
