@@ -27,7 +27,7 @@ export const Projects = () => {
           </Heading>
          
         </HStack>
-        <Wrap justify={"center"} spacing={"2rem"} my="2rem" mx="2rem" p="1rem">
+        <Wrap justify={"center"} spacing={"2rem"} my="2rem" mx={["0","1rem","2rem","2rem","2rem",]} p="1rem" style={{overflowX: 'clip'}}>
           {projectsList.map((project: any, index: number) => {
             return <ProjectCardRgb key={index} project={project} />;
           })}

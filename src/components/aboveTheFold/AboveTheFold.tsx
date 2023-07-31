@@ -17,7 +17,7 @@ export const AboveTheFold = () => {
         overflowX={"clip"}
         maxW="100%"
         justify={"space-between"}
-        h="95vh"
+        h={["70vh","95vh","95vh","95vh","95vh",]}
         id="home"
         backgroundRepeat={"no-repeat"}
         bgSize={"cover"}
@@ -38,7 +38,7 @@ export const AboveTheFold = () => {
             zIndex={1}
             maxW="fit-content"
             h="fit-content"
-            ml={["7vw"]}
+            ml={["0","0","7vw","7vw","7vw"]}
             mt="4rem"
             p="2rem"
             textAlign="left"

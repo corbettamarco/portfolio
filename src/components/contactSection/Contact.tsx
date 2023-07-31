@@ -9,10 +9,13 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
+  HStack,
   Heading,
+  Hide,
   Input,
   InputGroup,
   InputLeftElement,
+  Spacer,
   Stack,
   Text,
   Textarea,
@@ -23,6 +26,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
+import Globe from "./Globe";
 
 /*const Blur = (props: IconProps) => {
   return (
@@ -121,18 +125,24 @@ export default function Contact() {
             bgClip="text"
           >
             Let's get in touch!
-          </Text>{" "}
+          </Text>
         </Heading>
       </Stack>
-      <Container minW="100%" py={{ base: 3, sm: 5, lg: 10 }}>
-        <Center>
+      <Center>
+        <HStack minW="100%" justifyContent={'center'} py={{ base: 2, sm: 4, lg: 5 }}>
+          <Box mb="5rem">
+            <Hide below="lg">
+              <Globe />
+            </Hide>
+          </Box>
           <Stack
             bgColor={"#1A191D"}
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
-            spacing={{ base: 8 }}
-            w="70vw"
-            maxW={'40rem'}
+            w="42vw"
+            maxW={"40rem"}
+            minW={['18rem','20rem','22rem','22rem','22rem']}
+            m="1rem"
           >
             <Stack spacing={4}>
               <Heading
@@ -150,138 +160,147 @@ export default function Contact() {
                   !
                 </Text>
               </Heading>
-              <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-                Leave your contact here and I will answer ASAP
+              <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }} mb={'1rem'}>
+                Leave your contacts here and I will answer ASAP
               </Text>
             </Stack>
             <Center>
-            <Box as={"form"} onSubmit={handleSubmit(onSubmit)} w='50vw' maxW={'30rem'}>
-              <Stack spacing={4}>
-                <FormControl
-                  isRequired
-                  isInvalid={errors?.name ? true : false}
-                  h="6rem"
-                >
-                  <FormLabel color={"gray.500"}>First name</FormLabel>
-                  <InputGroup>
-                    <InputLeftElement
-                      color="gray.300"
-                      fontSize="1.2em"
-                      children={<FaUser />}
-                    />
-                    <Input
-                      placeholder="First Name"
-                      bg={"gray.100"}
-                      border={0}
-                      color={"gray.500"}
-                      _placeholder={{
-                        color: "gray.500",
-                      }}
-                      {...register("name", {
-                        required: "This is required",
-                      })}
-                      name="name"
-                    />
-                  </InputGroup>
-                  <FormErrorMessage color={"red"}>
-                    {errors.name && errors.name.message}
-                  </FormErrorMessage>
-                </FormControl>
-
-                <FormControl
-                  isRequired
-                  isInvalid={errors?.mail ? true : false}
-                  h="6rem"
-                >
-                  <FormLabel color={"gray.500"}>Email</FormLabel>
-                  <InputGroup>
-                    <InputLeftElement
-                      color="gray.300"
-                      fontSize="1.2em"
-                      children={<EmailIcon />}
-                    />
-                    <Input
-                      placeholder="example@mail.io"
-                      bg={"gray.100"}
-                      border={0}
-                      color={"gray.500"}
-                      _placeholder={{
-                        color: "gray.500",
-                      }}
-                      {...register("mail", {
-                        required: "This is required",
-                      })}
-                      name="mail"
-                    />
-                  </InputGroup>
-                  <FormErrorMessage color={"red"}>
-                    {errors.mail && errors.mail.message}
-                  </FormErrorMessage>
-                </FormControl>
-
-                <FormControl isInvalid={errors?.phone ? true : false} h="6rem">
-                  <FormLabel color={"gray.500"}>Phone</FormLabel>
-                  <InputGroup>
-                    <InputLeftElement
-                      color="gray.300"
-                      fontSize="1.2em"
-                      children={<PhoneIcon />}
-                    />
-                    <Input
-                      placeholder="+39 ________________"
-                      bg={"gray.100"}
-                      type="number"
-                      border={0}
-                      color={"gray.500"}
-                      _placeholder={{
-                        color: "gray.500",
-                      }}
-                      {...register("phone")}
-                      name="phone"
-                    />
-                  </InputGroup>
-                  <FormErrorMessage color={"red"}>
-                    {errors.phone && errors.phone.message}
-                  </FormErrorMessage>
-                </FormControl>
-
-                <FormControl>
-                  <FormLabel color={"gray.500"}>Message</FormLabel>
-                  <InputGroup>
-                    <Textarea
-                      placeholder="Your message..."
-                      bg={"gray.100"}
-                      border={0}
-                      color={"gray.500"}
-                      _placeholder={{
-                        color: "gray.500",
-                      }}
-                      {...register("message")}
-                      name="message"
-                    />
-                  </InputGroup>
-                </FormControl>
-              </Stack>
-              <Button
-                fontFamily={"heading"}
-                mt={8}
-                w={"full"}
-                bgGradient="linear(to-r, portfolio.400,pink.400)"
-                color={"white"}
-                _hover={{
-                  bgGradient: "linear(to-r, portfolio.400,pink.400)",
-                  boxShadow: "xl",
-                }}
-                type="submit"
-                disabled={isSubmitting}
+              <Box
+                as={"form"}
+                onSubmit={handleSubmit(onSubmit)}
+                w="50vw"
+                minW={['16rem','18rem','20rem','20rem','20rem']}
+                maxW={"30rem"}
               >
-                Submit
-              </Button>
-            </Box>
+                <Stack spacing={4}>
+                  <FormControl
+                    isRequired
+                    isInvalid={errors?.name ? true : false}
+                    h="6rem"
+                  >
+                    <FormLabel color={"gray.500"}>First name</FormLabel>
+                    <InputGroup>
+                      <InputLeftElement
+                        color="gray.300"
+                        fontSize="1.2em"
+                        children={<FaUser />}
+                      />
+                      <Input
+                        placeholder="First Name"
+                        bg={"gray.100"}
+                        border={0}
+                        color={"gray.500"}
+                        _placeholder={{
+                          color: "gray.500",
+                        }}
+                        {...register("name", {
+                          required: "This is required",
+                        })}
+                        name="name"
+                      />
+                    </InputGroup>
+                    <FormErrorMessage color={"red"}>
+                      {errors.name && errors.name.message}
+                    </FormErrorMessage>
+                  </FormControl>
+
+                  <FormControl
+                    isRequired
+                    isInvalid={errors?.mail ? true : false}
+                    h="6rem"
+                  >
+                    <FormLabel color={"gray.500"}>Email</FormLabel>
+                    <InputGroup>
+                      <InputLeftElement
+                        color="gray.300"
+                        fontSize="1.2em"
+                        children={<EmailIcon />}
+                      />
+                      <Input
+                        placeholder="example@mail.io"
+                        bg={"gray.100"}
+                        border={0}
+                        color={"gray.500"}
+                        _placeholder={{
+                          color: "gray.500",
+                        }}
+                        {...register("mail", {
+                          required: "This is required",
+                        })}
+                        name="mail"
+                      />
+                    </InputGroup>
+                    <FormErrorMessage color={"red"}>
+                      {errors.mail && errors.mail.message}
+                    </FormErrorMessage>
+                  </FormControl>
+
+                  <FormControl
+                    isInvalid={errors?.phone ? true : false}
+                    h="6rem"
+                  >
+                    <FormLabel color={"gray.500"}>Phone</FormLabel>
+                    <InputGroup>
+                      <InputLeftElement
+                        color="gray.300"
+                        fontSize="1.2em"
+                        children={<PhoneIcon />}
+                      />
+                      <Input
+                        placeholder="+39 ________________"
+                        bg={"gray.100"}
+                        type="number"
+                        border={0}
+                        color={"gray.500"}
+                        _placeholder={{
+                          color: "gray.500",
+                        }}
+                        {...register("phone")}
+                        name="phone"
+                      />
+                    </InputGroup>
+                    <FormErrorMessage color={"red"}>
+                      {errors.phone && errors.phone.message}
+                    </FormErrorMessage>
+                  </FormControl>
+
+                  <FormControl>
+                    <FormLabel color={"gray.500"}>Message</FormLabel>
+                    <InputGroup>
+                      <Textarea
+                        placeholder="Your message..."
+                        bg={"gray.100"}
+                        border={0}
+                        color={"gray.500"}
+                        _placeholder={{
+                          color: "gray.500",
+                        }}
+                        {...register("message")}
+                        name="message"
+                      />
+                    </InputGroup>
+                  </FormControl>
+                </Stack>
+                <Button
+                  fontFamily={"heading"}
+                  mt={8}
+                  w={"full"}
+                  bgGradient="linear(to-r, portfolio.400,pink.400)"
+                  color={"white"}
+                  _hover={{
+                    bgGradient: "linear(to-r, portfolio.400,pink.400)",
+                    boxShadow: "xl",
+                  }}
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Submit
+                </Button>
+              </Box>
             </Center>
           </Stack>
-        </Center>
-      </Container>
+        </HStack>
+      </Center>
       {/*<Blur
         position={"absolute"}
         top={-10}

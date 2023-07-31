@@ -48,7 +48,8 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
           pointerEvents={!project.isActive ? "none" : "auto"}
           cursor={!project.isActive ? "default" : "pointer"}
         >
-          <Box className="card rgb">
+          <Box className="card rgb"       gridTemplateColumns={['17rem','20rem','22rem','22rem','22rem',]}
+>
             <Image className="card-image" src={project.image}/>
             <div className="card-text ">
               <Box ml="-.2rem">
