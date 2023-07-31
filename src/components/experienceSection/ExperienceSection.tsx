@@ -19,7 +19,7 @@ export const ExperienceSection = () => {
     <>
       <HStack id="experience">
         <Heading
-          fontSize={["3rem", "3rem", "4rem", "4rem", "4rem", "4rem"]}
+          fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
           mt="1rem"
           px="4vw"
         >

@@ -117,7 +117,7 @@ export default function Contact() {
       <Stack spacing={10} my="1rem" px="4vw">
         <Heading
           lineHeight={1.1}
-          fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
+          fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
         >
           <Text
             as={"span"}

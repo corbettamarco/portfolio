@@ -1,15 +1,9 @@
-import {
-  Box,
-  Image,
-  Link,
-  Stack,
-  Tag,
-  Text
-} from "@chakra-ui/react";
+import { Box, Image, Link, Stack, Tag, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import "./projectCard.css";
 import "./projectCardRgb.css";
+import { projectColors } from "../projectsList";
 
 type PropsType = {
   key: number;
@@ -27,6 +21,8 @@ const defaultOptions = {
   reset: true, // If the tilt effect has to be reset on exit.
   easing: "cubic-bezier(0.25, 0.1, 0.25, 1.0)", // Easing on enter/exit.
 };
+
+
 export const ProjectCardRgb = ({ project }: PropsType) => {
   const [hover, setHover] = useState(false);
   return (
@@ -48,20 +44,20 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
           pointerEvents={!project.isActive ? "none" : "auto"}
           cursor={!project.isActive ? "default" : "pointer"}
         >
-          <Box className="card rgb"       gridTemplateColumns={['17rem','20rem','22rem','22rem','22rem',]}
->
-            <Image className="card-image" src={project.image}/>
+          <Box
+            className="card rgb"
+            gridTemplateColumns={["17rem", "20rem", "22rem", "22rem", "22rem"]}
+          >
+            <Image className="card-image" src={project.image} />
             <div className="card-text ">
               <Box ml="-.2rem">
-              {project.isActive === true ? (
-                <Tag colorScheme={"green"}> Demo Available</Tag>
-              ) : (
-                <Tag colorScheme={"red"}> Demo Not Available</Tag>
-              )}</Box>
-              <Box
-                roundedBottom={"md"}
-                py=".5rem"
-              >
+                {project.isActive === true ? (
+                  <Tag colorScheme={"green"}> Demo Available</Tag>
+                ) : (
+                  <Tag colorScheme={"red"}> Demo Not Available</Tag>
+                )}
+              </Box>
+              <Box roundedBottom={"md"} py=".5rem">
                 <Stack>
                   <Text
                     fontFamily={"Roboto, sans-serif"}
@@ -78,7 +74,28 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
                       {project.technologies.map(
                         (technology: any, index: number) => {
                           return (
-                            <Tag p=".3rem" key={index} mx=".15rem" mb=".3rem" mt=".1rem">
+                            <Tag
+                              p=".3rem"
+                              key={index}
+                              mx=".15rem"
+                              mb=".3rem"
+                              mt=".1rem"
+                              bgGradient={
+                                projectColors.find(
+                                  (tech) =>
+                                    tech.technology === technology
+                                )?.color
+                              }
+                              bgColor={
+                                projectColors.find(
+                                  (tech) =>
+                                    tech.technology === technology
+                                )?.color
+                              }
+                              fontWeight={'semibold'}
+                              fontFamily={"Roboto, sans-serif"}
+
+                            >
                               {technology}
                             </Tag>
                           );

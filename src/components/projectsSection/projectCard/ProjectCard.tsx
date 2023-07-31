@@ -83,8 +83,8 @@ export const ProjectCard = ({ project }: PropsType) => {
               <Text
                 fontFamily={"Roboto, sans-serif"}
                 fontWeight={"semibold"}
-                fontSize={"1.3rem"}
-              >
+                fontSize={["1rem","1rem","1.3rem","1.3rem","1.3rem",]}
+               >
                 {project.title}
               </Text>
               <Box overflow={"hidden"} pb=".5rem" h="fit-content">
@@ -95,7 +95,7 @@ export const ProjectCard = ({ project }: PropsType) => {
                   {project.technologies.map(
                     (technology: any, index: number) => {
                       return (
-                        <Tag p=".2rem" key={index} mx=".15rem" mb=".3rem">
+                        <Tag p=".2rem" key={index} mx=".15rem" mb=".3rem" backgroundColor={'#18e1e3'}>
                           {technology}
                         </Tag>
                       );
