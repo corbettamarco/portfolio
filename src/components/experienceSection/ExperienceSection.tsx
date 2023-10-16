@@ -49,12 +49,14 @@ export const ExperienceSection = () => {
             </Flex>
           </TabList>
         </Center>
+       
           <TabPanels>
             {jobs &&
               jobs.map((job: JobType, index: number) => {
                 return <SingleJob job={job} key={"singleJob" + index} />;
               })}
           </TabPanels>
+          
       </Tabs>
       </Center>
     </>

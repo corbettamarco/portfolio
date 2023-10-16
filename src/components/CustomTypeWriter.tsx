@@ -5,7 +5,7 @@ export const CustomTypeWriter = () => {
   return (
     <TypewriterComponent
       options={{
-        strings: ["Fullstack Developer", "Based in Milan"],
+        strings: ["Fullstack Developer", "Based in Milan", "In ❤️ with ReactJS"],
         autoStart: true,
         loop: true,
       }}

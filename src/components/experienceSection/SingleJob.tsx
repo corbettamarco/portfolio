@@ -24,9 +24,15 @@ export const SingleJob = ({ job }: { job: JobType }) => {
         mt={[".0", "0", "0", "1em", "1em"]}
         textColor={"white"}
         w={"100%"}
+        maxW={"80rem"}
         display={["block", "block", "flex", "flex", "flex"]}
+        justifyContent={"center"}
+        margin={"auto"}
+        borderBottom={{lg:"2px solid white"}}
+        pb="2rem"
+        overflowX={"hidden"}
       >
-        <VStack w={["100%", "100%", "50%", "50%", "50%"]}>
+        <VStack w={["100%", "100%", "50%", "50%", "50%"]} borderRight={{lg:"2px solid white"}}>
           <Image
             h={["3em", "4em", "5.5em", "8em", "8em"]}
             rounded={"lg"}
@@ -36,6 +42,7 @@ export const SingleJob = ({ job }: { job: JobType }) => {
           <Text
             color={"portfolio.500"}
             fontSize={["1.2rem", "1.2rem", "1.2rem", "1.5rem", "1.5rem"]}
+            textAlign={"center"}
           >
             {job.role}
           </Text>
@@ -65,8 +72,8 @@ export const SingleJob = ({ job }: { job: JobType }) => {
           w={["100%", "100%", "50%", "50%", "50%"]}
           mt={["1rem", "1rem", "2rem", "2rem", "2rem"]}
         >
-          <VStack>
-            <Text textAlign={['center','center','left','left','left']}>{job.desc}</Text>
+          <VStack pl={["1rem", "1rem","1rem","0rem","0rem"]}>
+            <Text textAlign={['center','center','left','left','left']} fontWeight={"semibold"} maxW={["100%", "100%", "100%", "70%", "70%",]}>{job.desc}</Text>
             <Center>
               <Wrap w="100%" pt="2rem">
                 {job.icons?.map((icon, index) => {
@@ -76,6 +83,7 @@ export const SingleJob = ({ job }: { job: JobType }) => {
                       fontSize={["4rem", "4rem", "4rem", "5rem", "5rem"]}
                       w={["4rem", "4rem", "4rem", "5rem", "5rem"]}
                       key={index}
+                      maxH={"64px"}
                     >
                       {icon}
                     </Box>

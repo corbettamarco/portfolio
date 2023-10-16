@@ -41,7 +41,7 @@ export const projectsList = [
     },
     {
         title: "Courses Admin Dashboard",
-        technologies: ["React","TypeScript", "Chakra UI", "React Router", "React Query", "MSAL Auth Library"],
+        technologies: ["React","TypeScript", "Chakra UI", "React Router", "React Query", "MSAL Library"],
         description: "Admin Dashboard for managing courses and participants ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ",
         link:"",
         image:"courses.png",
@@ -61,7 +61,7 @@ export const projectColors = [
     { technology: "Render", color: "#2743F1" },
     { technology: "React Query", color: "linear(to-r,#EF4742, #F59A0E)" },
     { technology: "React Router", color: "linear(to-r,#F44250, #5b5b5b)" },
-    { technology: "MSAL Auth Library", color: "linear(to-r,#01a4ef,#81b900 ,#ffba08 ,#f44e24  )" },
+    { technology: "MSAL Library", color: "linear(to-r,#01a4ef,#81b900 ,#ffba08 ,#f44e24  )" },
     { technology: "React Hook Form", color: "#ec5990" },
     { technology: "AWS Lambda", color: "#ff9900" },
     { technology: "JSON Server", color: "#F7E025" },

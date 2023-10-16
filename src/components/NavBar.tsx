@@ -26,14 +26,13 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
- 
   return (
     <Box
       position={"sticky"}
       style={{ ...navbarStyles, top: visible ? "0" : "-60px" }}
     >
       <HStack>
-        <SidebarName/>
+        <SidebarName />
         <Hide below="md">
           <SidebarContent />
         </Hide>
@@ -47,6 +46,6 @@ const navbarStyles = {
   width: "100%",
   transition: "top 0.6s",
   zIndex: "999",
-  backgroundColor:"rgb(0,0,0,0.4)",
-  backdropFilter: "blur(10px)"
+  backgroundColor: "rgb(0,0,0,0.4)",
+  backdropFilter: "blur(10px)",
 };

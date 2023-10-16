@@ -25,7 +25,6 @@ export const SingleTab = ({
       alignSelf={'flex-end'}
       borderColor={"#1A191D"}
       onClick={() => setSelected(index)}
-
     >
       <VStack
         my="0.5em"
@@ -36,7 +35,7 @@ export const SingleTab = ({
         spacing={1}
       >
         <Heading
-          w="40vw"
+          w={["75vw","75vw","25vw","25vw","25vw"]}
           fontSize={"1.5em"}
           textColor={selected === index ? "portfolio.500" : "white"}
         >

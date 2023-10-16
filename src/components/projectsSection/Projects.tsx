@@ -20,7 +20,7 @@ export const Projects = () => {
             px="4vw"
           >
             Projects
-            <Text fontSize={"sm"} mt='1rem' fontWeight={'medium'} color={'yellow.400'}>
+            <Text fontSize={["md","md","md","lg","lg","xl"]} mt='1rem' fontWeight={'semibold'} color={'yellow.400'}>
             Please allow a few seconds for the applications to spin up when
             opened
           </Text>

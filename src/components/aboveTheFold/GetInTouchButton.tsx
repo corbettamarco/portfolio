@@ -20,7 +20,7 @@ export default function GetInTouchButton() {
       alignSelf={"center"}
       position={"relative"}
       pt={"2rem"}
-      pl={["0", "0", "4rem", "5rem", "6rem"]}
+      pl={["0", "0", "0", "5rem", "6rem"]}
     >
       <a
         href="CVEnglish.pdf"

@@ -6,10 +6,15 @@ import {
   SiCss3,
   SiGithub,
   SiHtml5,
+  SiPostgresql,
+  SiPython,
   SiStorybook,
   SiTypescript,
+  SiXaml,
 } from "react-icons/si";
 import { ChakraUisvg } from "./ChakraUisvg";
+import { Image } from "@chakra-ui/react";
+import { IconContext } from "react-icons";
 
 export const jobs: JobType[] = [
   {
@@ -40,6 +45,32 @@ export const jobs: JobType[] = [
       <SiHtml5 color="#DD4B24" />,
       <SiCss3 color="#254BDD" />,
       <SiAdobedreamweaver color="#F75EEE" />,
+    ],
+  },
+  {
+    company: "Huroos SRL",
+    dates: "08/2023 - Today",
+    role: "Fullstack Developer",
+    img: "huroos.jpeg",
+    location:'Milan',
+    desc: "Odoo ERP Development using Python, XML and PostGreSQL.",
+    icons: [
+      <Image src="odoo.png" maxH="64px" m="0"/>,
+    <svg >
+     <defs>
+       <linearGradient id="pyGradient" gradientTransform={"rotate(45)"}>
+         <stop offset="25%"  stopColor="#407CACff" />
+         <stop offset="50%" stopColor="#3C7CAEff" />
+         <stop offset="75%"  stopColor="#648EB1ff" />
+         <stop offset="100%"  stopColor="#FCE987ff" />
+
+       </linearGradient>
+     </defs>
+     <IconContext.Provider value={{ attr: {fill: "url('#pyGradient')"}}}>
+     <SiPython/>
+     </IconContext.Provider>
+   </svg>,
+      <SiPostgresql/>
     ],
   },
 ];
