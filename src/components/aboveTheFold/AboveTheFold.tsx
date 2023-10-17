@@ -22,7 +22,8 @@ export const AboveTheFold = () => {
         bgSize={"cover"}
         w={"100vw"}
         overflowX={"clip"}
-        h={["70vh", "95vh", "95vh", "95vh", "95vh"]}
+        h={["90vh", "90vh", "90vh", "92vh", "92vh"]}
+        maxH={"100vh"}
       >
         <Flex
           backgroundColor={"rgba(0, 0, 0, 0.2)"}
@@ -39,7 +40,7 @@ export const AboveTheFold = () => {
               maxW="fit-content"
               h="fit-content"
               ml={["0", "0", "0", "7vw", "7vw"]}
-              mt="4rem"
+              mt={["1.5rem","2rem","2rem","2.5rem","4rem"]}
               p="2rem"
               textAlign="left"
               borderRadius={"md"}

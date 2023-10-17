@@ -45,11 +45,12 @@ export default function GetInTouchButton() {
         <Box>
           <Icon
             as={Arrow}
-            color={useColorModeValue("gray.800", "gray.300")}
+            color={"white.800"}
             w={71}
+            h={50}
             position={"absolute"}
-            right={-66}
-            top={"50px"}
+            right={-73}
+            top={"40px"}
           />
           <Text
             fontSize={"lg"}
