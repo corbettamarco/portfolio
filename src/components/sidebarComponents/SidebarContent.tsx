@@ -36,6 +36,7 @@ export const SidebarContent = () => {
         color={selected === index ? "portfolio.500" : "white"}
         opacity={(selected || selected===0) && selected !==index ? "0.5" : "1" }
         mt={'1rem'}
+        ml={{md:"1rem", lg:'2rem'}}
       >
         
         {section.text}
@@ -48,8 +49,7 @@ export const SidebarContent = () => {
 const codeStyles = {
   backgroundColor: "transparent",
   fontWeight: "bold",
-  padding: "1rem",
-  paddingLeft: "2rem",
+  padding: ".5em",
   display: "block",
   textDecoration: "none",
 };
