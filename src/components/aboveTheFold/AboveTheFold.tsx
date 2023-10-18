@@ -5,10 +5,11 @@ import {
   Hide,
   Image,
   Text,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
 import "../../styles/scrollDown.css";
+import "../../styles/flipCardStyles.css";
 import { CustomTypeWriter } from "../CustomTypeWriter";
 import { LogosBar } from "../logos/LogosBar";
 import GetInTouchButton from "./GetInTouchButton";
@@ -30,7 +31,6 @@ export const AboveTheFold = () => {
           overflowX={"clip"}
           maxW="100%"
           justify={"space-evenly"}
-          
           id="home"
           w={"100vw"}
         >
@@ -40,7 +40,7 @@ export const AboveTheFold = () => {
               maxW="fit-content"
               h="fit-content"
               ml={["0", "0", "0", "7vw", "7vw"]}
-              mt={["1.5rem","2rem","2rem","2.5rem","4rem"]}
+              mt={["1.5rem", "2rem", "2rem", "2.5rem", "4rem"]}
               p="2rem"
               textAlign="left"
               borderRadius={"md"}
@@ -66,8 +66,7 @@ export const AboveTheFold = () => {
             <GetInTouchButton />
           </VStack>
           <Hide below="lg">
-            <Image
-              src="me.png"
+            <Box
               zIndex="1"
               aspectRatio={1 / 1}
               maxH={"500px"}
@@ -76,13 +75,25 @@ export const AboveTheFold = () => {
               float={"right"}
               position={"relative"}
               bottom={"0"}
-              style={{ rotate: "20deg" }}
-            />
+              style={{ rotate: "20deg"}}
+              className="flip-card"
+            >
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <Image src="me.png" filter={"  opacity(88%)"} />
+                </div>
+                <Image src="me2.png" filter={"  opacity(88%)"} className="flip-card-back" />
+
+              </div>
+            </Box>
           </Hide>
         </Flex>
-        <Box zIndex={2} mt="2rem" position={"relative"}  id="test">
+        <Box zIndex={2} mt="2rem" position={"relative"} id="test">
           <a href="#projects">
-            <div className="scroll-down3" style={{boxShadow:"0px 0px 20px 8px white"}}>
+            <div
+              className="scroll-down3"
+              style={{ boxShadow: "0px 0px 20px 8px white" }}
+            >
               <FaAngleDown className="scroller" color="white" />
             </div>
           </a>
