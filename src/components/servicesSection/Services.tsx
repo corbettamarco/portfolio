@@ -1,17 +1,14 @@
 import {
-  Box,
-  Flex,
-  HStack,
-  Heading,
-  Hide,
-  Show,
-  Text,
-  VStack,
-  Wrap,
+    Box,
+    HStack,
+    Heading,
+    Show,
+    Text,
+    VStack,
+    Wrap
 } from "@chakra-ui/react";
-import { HiMiniRocketLaunch } from "react-icons/hi2";
+import { HiMiniRocketLaunch, HiOutlineComputerDesktop } from "react-icons/hi2";
 import { IoMdApps } from "react-icons/io";
-import {HiOutlineComputerDesktop} from "react-icons/hi2";
 import ServiceGlobe from "./ServiceGlobe";
 export const Services = () => {
   return (
