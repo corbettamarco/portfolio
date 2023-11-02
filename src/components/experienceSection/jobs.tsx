@@ -53,10 +53,10 @@ export const jobs: JobType[] = [
     role: "Fullstack Developer",
     img: "huroos.jpeg",
     location:'Milan',
-    desc: "Odoo ERP Development using Python, XML and PostGreSQL.",
+    desc: "Odoo ERP and Website Development using Python, XML and PostGreSQL.",
     icons: [
       <Image src="odoo.png" maxH="64px" m="0"/>,
-    <svg >
+    <svg style={{maxHeight:'64px', maxWidth:'64px'}}>
      <defs>
        <linearGradient id="pyGradient" gradientTransform={"rotate(45)"}>
          <stop offset="25%"  stopColor="#407CACff" />

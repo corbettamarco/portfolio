@@ -6,6 +6,7 @@ import {
   TabList,
   TabPanels,
   Tabs,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { JobType } from "../../Types/JobType";
@@ -24,9 +25,13 @@ export const ExperienceSection = () => {
           px="4vw"
         >
           Experience
+          <Text fontSize={["md","md","md","lg","lg","xl"]} mt='1rem' fontWeight={'semibold'} color={'yellow.400'}>
+            Click on each tab to see the corresponding experience
+            opened
+          </Text>
         </Heading>
       </HStack>
-      <Center>
+      <Center my="2rem">
       <Tabs variant={"line"}>
         <Center >
           <TabList borderBottomWidth={"0"}>

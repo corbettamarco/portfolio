@@ -23,7 +23,7 @@ export const AboveTheFold = () => {
         bgSize={"cover"}
         w={"100vw"}
         overflowX={"clip"}
-        h={["90vh", "90vh", "90vh", "92vh", "92vh"]}
+        h={["80vh", "85vh", "80vh", "92vh", "92vh"]}
         maxH={"100vh"}
       >
         <Flex
@@ -88,16 +88,18 @@ export const AboveTheFold = () => {
             </Box>
           </Hide>
         </Flex>
-        <Box zIndex={2} mt="2rem" position={"relative"} id="test">
-          <a href="#projects">
-            <div
-              className="scroll-down3"
-              style={{ boxShadow: "0px 0px 20px 8px white" }}
-            >
-              <FaAngleDown className="scroller" color="white" />
-            </div>
-          </a>
-        </Box>
+        <Hide above="md">
+          <Box zIndex={2} my="1rem" position={"relative"} id="test">
+            <a href="#projects">
+              <div
+                className="scroll-down3"
+                style={{ boxShadow: "0px 0px 20px 8px white" }}
+              >
+                <FaAngleDown className="scroller" color="white" />
+              </div>
+            </a>
+          </Box>
+        </Hide>
       </VStack>
       {/* <Image
           opacity={"0.5"}
