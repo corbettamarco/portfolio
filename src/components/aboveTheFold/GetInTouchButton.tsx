@@ -7,8 +7,7 @@ import {
   Icon,
   Stack,
   Text,
-  createIcon,
-  useColorModeValue
+  createIcon
 } from "@chakra-ui/react";
 
 export default function GetInTouchButton() {

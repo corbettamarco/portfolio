@@ -23,7 +23,7 @@ export const AboveTheFold = () => {
         bgSize={"cover"}
         w={"100vw"}
         overflowX={"clip"}
-        h={["80vh", "85vh", "80vh", "92vh", "92vh"]}
+        h={["80vh", "90vh", "85vh", "92vh", "92vh"]}
         maxH={"100vh"}
       >
         <Flex

@@ -1,6 +1,8 @@
 import { FaReact } from "react-icons/fa";
 import { JobType } from "../../Types/JobType";
 
+import { Image } from "@chakra-ui/react";
+import { IconContext } from "react-icons";
 import {
   SiAdobedreamweaver,
   SiCss3,
@@ -9,12 +11,9 @@ import {
   SiPostgresql,
   SiPython,
   SiStorybook,
-  SiTypescript,
-  SiXaml,
+  SiTypescript
 } from "react-icons/si";
 import { ChakraUisvg } from "./ChakraUisvg";
-import { Image } from "@chakra-ui/react";
-import { IconContext } from "react-icons";
 
 export const jobs: JobType[] = [
   {
