@@ -7,7 +7,8 @@ import {
     VStack,
     Wrap
 } from "@chakra-ui/react";
-import { HiMiniRocketLaunch, HiOutlineComputerDesktop } from "react-icons/hi2";
+import { HiDesktopComputer } from "react-icons/hi";
+import { FaRocket } from "react-icons/fa";
 import { IoMdApps } from "react-icons/io";
 import ServiceGlobe from "./ServiceGlobe";
 export const Services = () => {
@@ -40,7 +41,7 @@ export const Services = () => {
                 gap={"1rem"}
                 justifyContent={'space-between'}
               >
-                <HiMiniRocketLaunch />
+                <FaRocket />
 
                 <Text
                   borderLeft={"2px solid #BA4BBC"}
@@ -67,7 +68,7 @@ export const Services = () => {
           <Wrap justifyContent={"space-between"} alignItems={"stretch"}>
             <Show above="lg">
               <Box justifyContent={"center"} pointerEvents={"none"} fontSize={'200px'} style={{color:'#00C080'}}>
-                <HiOutlineComputerDesktop />
+                <HiDesktopComputer />
               </Box>
             </Show>
             <Box border="2px solid #00C080" borderRadius={"5px"} shadow={"2xl"} w={'60vw'}>
