@@ -23,8 +23,7 @@ export const AboveTheFold = () => {
         bgSize={"cover"}
         w={"100vw"}
         overflowX={"clip"}
-        h={["90vh", "90vh", "90vh", "90vh", "90vh"]}
-        maxH={"100vh"}
+        gap="0"
       >
         <Flex
           backgroundColor={"rgba(0, 0, 0, 0.2)"}
@@ -33,6 +32,7 @@ export const AboveTheFold = () => {
           justify={"space-evenly"}
           id="home"
           w={"100vw"}
+          paddingTop={"80px"}
         >
           <VStack>
             <Box
@@ -88,18 +88,18 @@ export const AboveTheFold = () => {
             </Box>
           </Hide>
         </Flex>
-        <Hide below="md">
-          <Box zIndex={2} my="1rem" position={"relative"} id="test">
+       
+          <Box backgroundColor={"rgba(0, 0, 0, 0.2)"} w="100%" py="2rem" zIndex={2} my="1rem" position={"relative"} id="test" m="0" >
             <a href="#projects">
               <div
                 className="scroll-down3"
-                style={{ boxShadow: "0px 0px 20px 8px white" }}
+                style={{ boxShadow: "0px 0px 20px 8px white", marginInline: 'auto', }}
               >
-                <FaAngleDown className="scroller" color="white" />
+                <FaAngleDown className="scroller" color="white"/>
               </div>
             </a>
           </Box>
-        </Hide>
+       
       </VStack>
       {/* <Image
           opacity={"0.5"}
