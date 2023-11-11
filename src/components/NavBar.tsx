@@ -16,25 +16,23 @@ export const NavBar = () => {
         prevScrollPos - currentScrollPos > 70) ||
         currentScrollPos < 10
     );
-
     setPrevScrollPos(currentScrollPos);
   }, 100);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
+  }, [handleScroll]);
 
   return (
     <Box
-      position={"sticky"}
-      style={{ ...navbarStyles, top: visible ? "0" : "-60px" }}
+      position={"fixed"}
+      style={{ ...navbarStyles, top: visible ? "0" : "-80px" }}
     >
       <HStack>
         <SidebarName />
         <Hide below="md">
-          <SidebarContent />
+          <SidebarContent/>
         </Hide>
       </HStack>
     </Box>

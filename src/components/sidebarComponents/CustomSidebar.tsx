@@ -1,4 +1,4 @@
-import { Hide, Spacer } from "@chakra-ui/react";
+import { Hide, Spacer, useDisclosure } from "@chakra-ui/react";
 import {
   Sidebar,
   SidebarOverlay,
@@ -10,6 +10,8 @@ import { SidebarContent } from "./SidebarContent";
 
 export const CustomSidebar = () => {
 
+  const {onClose, isOpen, onOpen}=useDisclosure();
+
   return (
     <Hide above="md">
       <Sidebar
@@ -18,11 +20,13 @@ export const CustomSidebar = () => {
         transitionDuration="normal"
         w={"15rem"}
         bgColor={"rgba(0,0,0,0.6)"}
+        isOpen={isOpen}
+        onClick={isOpen? onClose: onOpen}
       >
-        <SidebarOverlay />
+        <SidebarOverlay/>
         <SidebarSection mt={"2rem"}>
           <SidebarToggleButton mt={".5rem"} _hover={{backgroundColor:"rgb(24, 225, 227,0.4)", backdropFilter:"blur(10px)"}} bgColor={'portfolio.500'} color={'#1A191D'}/>
-          <SidebarContent/>
+          <SidebarContent />
         </SidebarSection>
         <Spacer />
         <SidebarSection  w="15rem" py="1rem">

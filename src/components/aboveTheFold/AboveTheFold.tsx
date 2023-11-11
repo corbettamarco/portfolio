@@ -23,7 +23,7 @@ export const AboveTheFold = () => {
         bgSize={"cover"}
         w={"100vw"}
         overflowX={"clip"}
-        h={["80vh", "90vh", "85vh", "92vh", "92vh"]}
+        h={["90vh", "90vh", "90vh", "90vh", "90vh"]}
         maxH={"100vh"}
       >
         <Flex
@@ -88,7 +88,7 @@ export const AboveTheFold = () => {
             </Box>
           </Hide>
         </Flex>
-        <Hide above="md">
+        <Hide below="md">
           <Box zIndex={2} my="1rem" position={"relative"} id="test">
             <a href="#projects">
               <div

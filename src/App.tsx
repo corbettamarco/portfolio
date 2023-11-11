@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <AppShell navbar={<NavBar />} sidebar={<CustomSidebar />}>
         <AboveTheFold />
-        <Services/>
+        {/* <Services/> */}
         <Projects />
         <ExperienceSection/>
         <Contact/>
