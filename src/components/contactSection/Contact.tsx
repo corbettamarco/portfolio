@@ -266,7 +266,7 @@ export default function Contact() {
                       <Input
                         placeholder="+39 ________________"
                         bg={"gray.100"}
-                        type="number"
+                        type="tel"
                         border={0}
                         color={"gray.500"}
                         _placeholder={{
