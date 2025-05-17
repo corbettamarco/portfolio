@@ -35,8 +35,8 @@ export const SingleTab = ({
         spacing={1}
       >
         <Heading
-          w={["75vw","75vw","25vw","25vw","25vw"]}
-          fontSize={"1.5em"}
+          w={["75vw","75vw","15vw","15vw","15vw"]}
+          fontSize={["1.5em", "1.5em", "1em", "1.2em", "1.5em"]}
           textColor={selected === index ? "portfolio.500" : "white"}
         >
           {singleTab.company}
