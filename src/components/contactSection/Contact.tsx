@@ -21,12 +21,13 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FaUser } from "react-icons/fa";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import Globe from "./Globe";
+import { useEffect } from "react";
 
 /*const Blur = (props: IconProps) => {
   return (
@@ -59,7 +60,7 @@ const schema = z.object({
   phone: z
     .string()
     .regex(
-      /^$|^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i,
+      /^$|^\+?[0-9\s\-()]{7,}$/,
       "Invalid Number!"
     )
     .optional(),
@@ -78,36 +79,52 @@ export default function Contact() {
     formState: { errors, isSubmitting },
   } = useForm<Inputs>({ resolver: zodResolver(schema) });
 
+  useEffect(() => {
+  const pubKey = process.env.REACT_APP_PUBLIC_KEY;
+  if (pubKey) {
+    // Initialize the SDK with your Public Key
+    emailjs.init(pubKey);
+  } else {
+    console.error(
+      "[EmailJS] Missing REACT_APP_PUBLIC_KEY. Visit https://dashboard.emailjs.com/admin/account"
+    );
+  }
+}, []);
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    emailjs
-      .send(
-        process.env.REACT_APP_SERVICE_ID
-          ? process.env.REACT_APP_SERVICE_ID
-          : "",
-        process.env.REACT_APP_TEMPLATE_ID
-          ? process.env.REACT_APP_TEMPLATE_ID
-          : "",
-        data,
-        process.env.REACT_APP_PUBLIC_KEY
-      )
-      .then(
-        (result: any) => {
-          toast({
-            title: `Message Sent`,
-            status: "success",
-            isClosable: true,
-          });
-          reset();
-        },
-        (error: any) => {
-          toast({
-            title: `Error` + error,
-            status: "error",
-            isClosable: true,
-          });
-        }
-      );
-  };
+  const serviceID = process.env.REACT_APP_SERVICE_ID!;
+  const templateID = process.env.REACT_APP_TEMPLATE_ID!;
+
+  if (!serviceID || !templateID) {
+    toast({
+      title: "Configuration Error",
+      description:
+        "Email service is not configured correctly. Please contact the site administrator.",
+      status: "error",
+      isClosable: true,
+    });
+    return;
+  }
+
+  try {
+    const resp = await emailjs.send(serviceID, templateID, data);
+    toast({ title: "Message Sent", status: "success", isClosable: true });
+    reset();
+  } catch (err: any) {
+    console.error("[EmailJS] Error:", err);
+    const errMsg =
+      typeof err.text === "string"
+        ? err.text
+        : err.message || "An unexpected error occurred.";
+    toast({
+      title: "Failed to Send",
+      description: errMsg,
+      status: "error",
+      isClosable: true,
+    });
+  }
+};
+
   return (
     <Box
       id="contacts"
@@ -310,3 +327,5 @@ export default function Contact() {
     </Box>
   );
 }
+
+
