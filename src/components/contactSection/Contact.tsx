@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Center,
-  Container,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -15,19 +14,19 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Spacer,
+  Spinner,
   Stack,
   Text,
   Textarea,
-  useToast,
+  useToast
 } from "@chakra-ui/react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
 import Globe from "./Globe";
-import { useEffect } from "react";
 
 /*const Blur = (props: IconProps) => {
   return (
@@ -80,50 +79,50 @@ export default function Contact() {
   } = useForm<Inputs>({ resolver: zodResolver(schema) });
 
   useEffect(() => {
-  const pubKey = process.env.REACT_APP_PUBLIC_KEY;
-  if (pubKey) {
-    // Initialize the SDK with your Public Key
-    emailjs.init(pubKey);
-  } else {
-    console.error(
-      "[EmailJS] Missing REACT_APP_PUBLIC_KEY. Visit https://dashboard.emailjs.com/admin/account"
-    );
-  }
-}, []);
+    const pubKey = process.env.REACT_APP_PUBLIC_KEY;
+    if (pubKey) {
+      // Initialize the SDK with your Public Key
+      emailjs.init(pubKey);
+    } else {
+      console.error(
+        "[EmailJS] Missing REACT_APP_PUBLIC_KEY. Visit https://dashboard.emailjs.com/admin/account"
+      );
+    }
+  }, []);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-  const serviceID = process.env.REACT_APP_SERVICE_ID!;
-  const templateID = process.env.REACT_APP_TEMPLATE_ID!;
+    const serviceID = process.env.REACT_APP_SERVICE_ID!;
+    const templateID = process.env.REACT_APP_TEMPLATE_ID!;
 
-  if (!serviceID || !templateID) {
-    toast({
-      title: "Configuration Error",
-      description:
-        "Email service is not configured correctly. Please contact the site administrator.",
-      status: "error",
-      isClosable: true,
-    });
-    return;
-  }
+    if (!serviceID || !templateID) {
+      toast({
+        title: "Configuration Error",
+        description:
+          "Email service is not configured correctly. Please contact the site administrator.",
+        status: "error",
+        isClosable: true,
+      });
+      return;
+    }
 
-  try {
-    const resp = await emailjs.send(serviceID, templateID, data);
-    toast({ title: "Message Sent", status: "success", isClosable: true });
-    reset();
-  } catch (err: any) {
-    console.error("[EmailJS] Error:", err);
-    const errMsg =
-      typeof err.text === "string"
-        ? err.text
-        : err.message || "An unexpected error occurred.";
-    toast({
-      title: "Failed to Send",
-      description: errMsg,
-      status: "error",
-      isClosable: true,
-    });
-  }
-};
+    try {
+      const resp = await emailjs.send(serviceID, templateID, data);
+      toast({ title: "Message Sent", status: "success", isClosable: true });
+      reset();
+    } catch (err: any) {
+      console.error("[EmailJS] Error:", err);
+      const errMsg =
+        typeof err.text === "string"
+          ? err.text
+          : err.message || "An unexpected error occurred.";
+      toast({
+        title: "Failed to Send",
+        description: errMsg,
+        status: "error",
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <Box
@@ -158,7 +157,7 @@ export default function Contact() {
             p={{ base: 4, sm: 6, md: 8 }}
             w="42vw"
             maxW={"40rem"}
-            minW={['18rem','20rem','22rem','22rem','22rem']}
+            minW={['18rem', '20rem', '22rem', '22rem', '22rem']}
             m="1rem"
           >
             <Stack spacing={4}>
@@ -186,7 +185,7 @@ export default function Contact() {
                 as={"form"}
                 onSubmit={handleSubmit(onSubmit)}
                 w="50vw"
-                minW={['16rem','18rem','20rem','20rem','20rem']}
+                minW={['16rem', '18rem', '20rem', '20rem', '20rem']}
                 maxW={"30rem"}
               >
                 <Stack spacing={4}>
@@ -311,7 +310,11 @@ export default function Contact() {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Submit
+                  {isSubmitting ? (
+                    <Spinner size="md" color="white" />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </Box>
             </Center>
