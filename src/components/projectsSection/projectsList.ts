@@ -1,8 +1,48 @@
 export const projectsList = [
     {
+        title: "Beeranza Ecommerce",
+        technologies: ["React","TypeScript", "Supabase", "Tailwind CSS", "Stripe API"],
+        description: "Ecommerce created for a beer company in Italy using React and Supabase, including admin dashboard and custom beer cans editor",
+        link:"https://beeranza.netlify.app/",
+        image:"beeranza-ecommerce.png",
+        isActive:true,
+    },
+    {
+        title: "Beeranza Website",
+        technologies: ["Odoo","Javascript", "HTML", "CSS"],
+        description: "Website created for a beer company in Italy using Odoo CMS",
+        link:"https://www.beeranza.it/",
+        image:"beeranza.png",
+        isActive:true,
+    },
+    {
+        title: "BBackup",
+        technologies: ["Python", "Supabase", "React", "Tailwind CSS", "Restic"],
+        description: "Backup management application based on Restic to allow seamless cross-platform backups and restores",
+        link:"",
+        image:"bbackup.png",
+        isActive:false,
+    },
+    {
+        title: "Milor ecommerce and catalog Odoo integration",
+        technologies: ["Odoo", "Python"],
+        description: "Odoo integration for a Milan based jewels wholesaler to handle products catalogs and ecommerce orders",
+        link:"",
+        image:"milor.png",
+        isActive:false,
+    },
+    {
+        title: "Terna hardware failure management app",
+        technologies: ["Angular", "TypeScript", "Golang"],
+        description: "Web app for Terna SPA to monitor and manage hardware failures",
+        link:"",
+        image:"terna.png",
+        isActive:false,
+    },
+    {
         title: "TwiBooter",
         technologies: ["Vercel", "AWS Lambda", "Python", "React", "TypeScript", "Chakra UI"],
-        description: "App for scaping data from Twitch and creating shorts ready to be uploaded on Youtube or TikTok",
+        description: "Demo app for scaping data from Twitch and creating shorts ready to be uploaded on Youtube or TikTok",
         link:"https://twi-booter.vercel.app/",
         image:"twiBooter.png",
         isActive:true,
@@ -26,7 +66,7 @@ export const projectsList = [
     {
         title: "Movie App",
         technologies: ["Netlify", "React", "TypeScript", "Chakra UI"],
-        description: "App using IMDb APIs to show a list of films/games/series and relative detail created to learn React.JS fundamentals",
+        description: "Demo app using IMDb APIs to show a list of films/games/series and relative detail created to learn React.JS fundamentals",
         link:"https://lucent-croissant-289388.netlify.app/",
         image:"movieApp.png",
         isActive:true,
@@ -57,6 +97,10 @@ export const projectColors = [
     { technology: "Python", color: "linear(to-r,#3776AB, #FFE263)" },
     { technology: "Netlify", color: "linear(to-r, #38B16D, #222DA9)" },
     { technology: "TypeScript", color: "#007ACC" },
+    { technology: "Odoo", color: "#714B67" },
+    { technology: "HTML", color: "#E34F26" },
+    { technology: "CSS", color: "#1572B6" },
+    { technology: "Javascript", color: "#F7DF1E" },
     { technology: "Vercel", color: "linear(to-r,#A065CF, #EC058A)" },
     { technology: "Render", color: "#2743F1" },
     { technology: "React Query", color: "linear(to-r,#EF4742, #F59A0E)" },
@@ -65,6 +109,13 @@ export const projectColors = [
     { technology: "React Hook Form", color: "#ec5990" },
     { technology: "AWS Lambda", color: "#ff9900" },
     { technology: "JSON Server", color: "#F7E025" },
+    { technology: "Stripe API", color: "#635BFF" },
+    { technology: "Supabase", color: "#63D7A2" },
+    { technology: "Tailwind CSS", color: "#06B6D4" },
+    { technology: "Restic", color: "#F7E06D" },
+    { technology: "Golang", color: "#00ADD8" },
+    { technology: "Angular", color: "#DD0031" },
+    
   ];
   
   

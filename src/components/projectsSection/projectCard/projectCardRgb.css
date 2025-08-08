@@ -49,6 +49,7 @@
     background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    height: 180px;
   }
   
   .card-text {
