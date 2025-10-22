@@ -17,7 +17,7 @@ export const Projects = () => {
           <Heading
             fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
             mt="1rem"
-            px="4vw"
+            px={{ base: "3vw", md: "4vw" }}
           >
             Projects
             <Text fontSize={["md","md","md","lg","lg","xl"]} mt='1rem' fontWeight={'semibold'} color={'yellow.400'}>
@@ -27,7 +27,14 @@ export const Projects = () => {
           </Heading>
          
         </HStack>
-        <Wrap justify={"center"} spacing={"2rem"} my="2rem" mx={["0","1rem","2rem","2rem","2rem",]} p="1rem" style={{overflowX: 'clip'}}>
+        <Wrap
+          justify={"center"}
+          spacing={{ base: "1.5rem", md: "2rem" }}
+          my="2rem"
+          px={{ base: "3vw", md: "1.5rem" }}
+          py="1rem"
+          style={{ overflowX: "clip" }}
+        >
           {projectsList.map((project: any, index: number) => {
             return <ProjectCardRgb key={index} project={project} />;
           })}

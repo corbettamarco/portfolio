@@ -35,7 +35,7 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
       <Box
         onMouseEnter={(e: React.MouseEvent) => setHover(true)}
         onMouseLeave={(e: React.MouseEvent) => setHover(false)}
-        overflow={"hidden"}
+        overflow={"visible"}
       >
         <Link
           _hover={{ textDecoration: "none" }}
@@ -46,9 +46,10 @@ export const ProjectCardRgb = ({ project }: PropsType) => {
         >
           <Box
             className="card rgb"
-            gridTemplateColumns={["17rem", "20rem", "22rem", "22rem", "22rem"]}
+            w={{ base: "min(90vw, 26rem)", md: "22rem" }}
+            mx="auto"
           >
-            <Image className="card-image" src={project.image} />
+            <Image className="card-image" src={project.image} alt={project.title} />
             <div className="card-text ">
               <Box ml="-.2rem">
                 {project.isActive === true ? (

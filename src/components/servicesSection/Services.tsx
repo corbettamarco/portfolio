@@ -17,20 +17,25 @@ export const Services = () => {
       <HStack>
         <Heading
           fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
-          px="4vw"
+          px={{ base: "3vw", md: "4vw" }}
         >
           Services
         </Heading>
       </HStack>
-      <Box m="2rem">
+      <Box mx={{ base: "1rem", md: "2rem" }}>
         <VStack mt={"2rem"} spacing={"2rem"}>
-          <Wrap justifyContent={"space-between"} alignItems={"stretch"}>
+          <Wrap
+            justifyContent={"space-between"}
+            alignItems={"stretch"}
+            spacing={{ base: "1.5rem", md: "2rem" }}
+            px={{ base: "3vw", md: "0" }}
+          >
             <Box
               fontFamily={"body"}
               border="4px solid #BA4BBC"
               borderRadius={"8px"}
               shadow={"2xl"}
-              w={"60vw"}
+              w={{ base: "min(90vw, 28rem)", md: "60vw" }}
               background={"linear-gradient(#BA4BBC 0%, #fff0 70%, #1d1d1d 100%)"}
             >
               <HStack
@@ -70,7 +75,12 @@ export const Services = () => {
               </Box>
             </Show>
           </Wrap>
-          <Wrap justifyContent={"space-between"} alignItems={"stretch"}>
+          <Wrap
+            justifyContent={"space-between"}
+            alignItems={"stretch"}
+            spacing={{ base: "1.5rem", md: "2rem" }}
+            px={{ base: "3vw", md: "0" }}
+          >
             <Show above="lg">
               <Box
                 justifyContent={"center"}
@@ -87,7 +97,7 @@ export const Services = () => {
               border="4px solid #00C080"
               borderRadius={"8px"}
               shadow={"2xl"}
-              w={"60vw"}
+              w={{ base: "min(90vw, 28rem)", md: "60vw" }}
               background={"linear-gradient(#00C080 0%, #fff0 70%, #1d1d1d 100%)"}
             >
               <HStack

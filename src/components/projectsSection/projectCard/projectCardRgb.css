@@ -1,8 +1,10 @@
 
   .card {
+    position: relative;
     display: grid;
-   
-    height: 400px;
+    min-height: 400px;
+    width: min(90vw, 26rem);
+    margin: 1.5rem auto;
     grid-template-areas: "image" "text" "stats";
     border-radius: 18px;
     background: #1d1d1d;
@@ -10,9 +12,15 @@
     font-family: roboto;
     text-align: justify;
     cursor: pointer;
-    margin:30px;
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    overflow: visible;
+  }
+  @media (min-width: 48em) {
+    .card {
+      width: 22rem;
+      margin: 1.5rem;
+    }
   }
   .rgb::after {
     content:"";
@@ -46,10 +54,17 @@
   }
   .card-image {
     grid-area: image;
+    width: 100%;
+    height: clamp(200px, 45vw, 240px);
     background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    height: 180px;
+    object-fit: cover;
+  }
+  @media (min-width: 48em) {
+    .card-image {
+      height: 180px;
+    }
   }
   
   .card-text {

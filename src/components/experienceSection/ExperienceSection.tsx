@@ -22,7 +22,7 @@ export const ExperienceSection = () => {
         <Heading
           fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
           mt="1rem"
-          px="4vw"
+          px={{ base: "3vw", md: "4vw" }}
         >
           Experience
           <Text fontSize={["md","md","md","lg","lg","xl"]} mt='1rem' fontWeight={'semibold'} color={'yellow.400'}>

@@ -34,24 +34,36 @@ export const AboveTheFold = () => {
           w={"100vw"}
           paddingTop={"80px"}
         >
-          <VStack>
+          <VStack align={"start"} px={{ base: "4vw", md: "0" }}>
             <Box
               zIndex={1}
-              maxW="fit-content"
+              w={{ base: "min(92vw, 30rem)", md: "min(80vw, 34rem)", lg: "fit-content" }}
               h="fit-content"
               ml={["0", "0", "0", "7vw", "7vw"]}
               mt={["1.5rem", "2rem", "2rem", "2.5rem", "4rem"]}
-              p="2rem"
+              p={{ base: "1.25rem", md: "2rem" }}
               textAlign="left"
               borderRadius={"md"}
               bgColor={"blackAlpha.500"}
             >
-              <Heading
-                maxW={"fit-content"}
-                fontSize={["2rem", "4rem", "5rem", "6rem", "6rem"]}
-              >
-                <Text color={"portfolio.500"}>Marco </Text> Corbetta
-              </Heading>
+              <Flex align={"center"} gap={{ base: "1rem", md: "1.5rem" }} w="100%">
+                <Heading
+                  maxW={"fit-content"}
+                  fontSize={["1.7rem", "2.5rem", "2.75rem", "3.75rem", "6rem", "6rem"]}
+                  flex="1"
+                >
+                  <Text color={"portfolio.500"}>Marco </Text> Corbetta
+                </Heading>
+                <Hide above="lg">
+                  <Image
+                    src="me.png"
+                    alt="Marco Corbetta"
+                    w={["60%", "60%", "60%", "70%", "70%", "70%"]}
+                    objectFit="cover"
+                    filter="opacity(88%)"
+                  />
+                </Hide>
+              </Flex>
               <Box
                 mx=".2rem"
                 my=".5rem"

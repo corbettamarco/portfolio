@@ -106,7 +106,7 @@ export default function Contact() {
     }
 
     try {
-      const resp = await emailjs.send(serviceID, templateID, data);
+      await emailjs.send(serviceID, templateID, data);
       toast({ title: "Message Sent", status: "success", isClosable: true });
       reset();
     } catch (err: any) {
@@ -130,7 +130,7 @@ export default function Contact() {
       position={"relative"}
       bgGradient="linear(to-l, pink.600, #1A191D, portfolio.800)"
     >
-      <Stack spacing={10} my="1rem" px="4vw">
+  <Stack spacing={10} my="1rem" px={{ base: "3vw", md: "4vw" }}>
         <Heading
           lineHeight={1.1}
           fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "4rem", "4rem"]}
@@ -145,7 +145,12 @@ export default function Contact() {
         </Heading>
       </Stack>
       <Center>
-        <HStack minW="100%" justifyContent={'center'} py={{ base: 2, sm: 4, lg: 5 }}>
+        <HStack
+          minW="100%"
+          justifyContent={'center'}
+          py={{ base: 2, sm: 4, lg: 5 }}
+          px={{ base: "3vw", md: "0" }}
+        >
           <Box mb="5rem">
             <Hide below="lg">
               <Globe />
@@ -155,9 +160,9 @@ export default function Contact() {
             bgColor={"#1A191D"}
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
-            w="42vw"
+            w={{ base: "min(92vw, 32rem)", md: "42vw" }}
             maxW={"40rem"}
-            minW={['18rem', '20rem', '22rem', '22rem', '22rem']}
+            minW={{ base: "auto", md: "22rem" }}
             m="1rem"
           >
             <Stack spacing={4}>
@@ -184,8 +189,7 @@ export default function Contact() {
               <Box
                 as={"form"}
                 onSubmit={handleSubmit(onSubmit)}
-                w="50vw"
-                minW={['16rem', '18rem', '20rem', '20rem', '20rem']}
+                w="100%"
                 maxW={"30rem"}
               >
                 <Stack spacing={4}>
