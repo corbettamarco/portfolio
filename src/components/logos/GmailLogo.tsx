@@ -4,7 +4,7 @@ import { FaEnvelope } from 'react-icons/fa';
 
 export const GmailLogo = () => {
   return (
-    <Tooltip label="corbettamarco.it@gmail.com">
+    <Tooltip label="info@corbettamarco.com">
       <Link
         h="3rem"
         p=".5rem"
@@ -15,7 +15,7 @@ export const GmailLogo = () => {
         borderWidth={"2px"}
         className="linkLogo"
         fontSize={"2rem"}
-        href="mailto:corbettamarco.it@gmail.com"
+        href="mailto:info@corbettamarco.com"
         target="_blank"
        color={'red.400'}
         ><FaEnvelope/></Link>
