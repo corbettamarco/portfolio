@@ -26,8 +26,7 @@ export const ExperienceSection = () => {
         >
           Experience
           <Text fontSize={["md","md","md","lg","lg","xl"]} mt='1rem' fontWeight={'semibold'} color={'yellow.400'}>
-            Click on each tab to see the corresponding experience
-            opened
+            Click a tab to view the corresponding experience
           </Text>
         </Heading>
       </HStack>
