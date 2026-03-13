@@ -21,7 +21,7 @@ export const jobs: JobType[] = [
     dates: "06/2022 - 05/2023",
     role: "Front End Developer",
     img: "refactormi.png",
-    location: 'Fulll Remote',
+    location: 'Full Remote',
     desc: `UI development of applications for client companies. Usage of GitHub for version control, HTML, CSS, React.JS + TypeScript, Chakra UI library, Storybook and NX monorepository.`,
     icons: [
       <FaReact color="#00DBF7" />,
@@ -88,7 +88,7 @@ export const jobs: JobType[] = [
   },
   {
     company: "DataTrust AG",
-    dates: "04/2024 - Present",
+    dates: "04/2025 - Present",
     role: "Fullstack Developer",
     img: "datatrust_ag.jpg",
     location: 'Remote',
