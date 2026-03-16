@@ -16,7 +16,7 @@ export const SidebarName = () => {
           as={Link}
           href="#home"
         >
-          MarcoCorbetta._
+          CorbettaMarco._
         </Code>
   )
 }
